@@ -1,15 +1,24 @@
 package org.sid.entities;
 
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +28,9 @@ import lombok.NoArgsConstructor;
 @Data  @AllArgsConstructor  @NoArgsConstructor
 public class User {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idU ;
+	private Long userId ;
+	@Column(length = 50)
+	private String username;
 	private String token;
 	@Column(length = 50)
 	private String firstName;
@@ -37,16 +48,23 @@ public class User {
 	@Column(length = 50)
 	private String birthplace;
 	@Column(length = 10)
-	private String cin;
 	private int phone ;
 	@Column(length = 50)
 	private String email;
 	@Column(length = 50)
 	private String password;
+	private int isAdmin;
 	@Column(length = 50)
-	private String profil;
+	private String paymentAccount;
+	@Fetch(value = FetchMode.SUBSELECT)
+	@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
+	@JoinColumn(name="bidId")
+	private List<Bid> bids = new ArrayList<Bid>();
+	@Fetch(value = FetchMode.SUBSELECT)
+	@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
+	@JoinColumn(name="paymentId")
+	private List<Payment> payments = new ArrayList<Payment>();
 	/*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idG")
 	private Groupe groupe;*/
-	private Long idG;
 }
