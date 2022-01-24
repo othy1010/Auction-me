@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #A980F8;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+.navbar .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 15px;
+}
+.navbar .logo img{
+    width:30px;
+    float: left;
+    position: relative;
+}
+.navbar a{
+    float: left;
+    font-family: "Myriad Pro Light", serif;
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.logo{
+    margin-right: 20px;
+}
+.navbar a:hover{
+    background-color: rgba(0, 0, 0, 0.29);
+}
+.navbar a[id='logo']:hover{
+    background: none;
+}
+
+.account{
+    float: right;
+ }
+.account button{
+    padding: 5px 10px;
+    margin-left: 10px;
+    margin-right: 120px;
+    margin-top: 0px;
+    position: relative;
+    bottom: 4px;
+    width: 110px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    border-color: rgba(169, 128, 248, 0);
+}
+.account button#signUp{
+    color: white;
+    background-color: #FD809E;
+}
+.account button#signUp:hover{
+    color: #FD809E;
+    background-color: white;
+    border: 2px solid #FD809E;
+}
+
+.account button:active{
+    box-shadow: 0 3px #362654;
+    transform: translateY(3px);
+}
+
+.bar{
+    padding-top: 10px;
+    margin-left: 58%;
+}
+
+.header{
+    padding: 0px;
+    background: white;
+    color: #fff;
+    width: 100%;
+    height: 500px;
+    vertical-align: middle;
+}
+.left{
+    float: left;
+    margin-top: 250px;
+    margin-left: 80px;
+    font-size: 70px;
+    font-family: "Segoe UI Light", serif;
+    font-kerning: none;
+    color: black;
+    line-height:100px;
+    font-weight: bold;
+
+}
+.right{
+    float: right;
+    margin-right: 80px;
+    margin-top: 130px;
+}
+
+
+.TL{
+    //-webkit-text-stroke: 2px black;
+    color: #FD809E;
+}
+.or{
+    -webkit-text-stroke: 4px #FD809E ;
+    font-family: "Segoe UI Black", serif;
+    color: white;
+}
+
+
+.down{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.account button#signUp2{
+    color: white;
+    background-color: #FD809E;
+    position: relative;
+    bottom: 98px;
+    right: 150px;
+}
+
+.account button#signUp2:hover{
+    color: #FD809E;
+    background-color: white;
+    border: 2px solid #FD809E;
+}
+
+/* Footer */
+.footer{
+    padding: 10px;
+    text-align: center;
+    background-color: #A980F8;
+    margin-top: 20px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer table{
+    text-align: left;
+    font-size: 10px;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.footer thead{
+    font-weight: bold;
+    color: #161324;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+div.gallery, div.fullGallery{
+    margin: 10px;
+    float: left;
+    width: 250px;
+}
+div.gallery{
+    border: 1px solid #ccc;
+    border-radius: 15%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+.pagination {
+    display: inline-block;
+    transform: translateX(100px);
+}
+
+.pagination a {
+    color: black;
+    margin-top: 20px;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.about{
+    text-align: center;
+    font-size: 60px;
+    font-family: "Segoe UI Light", serif;
+    color: #f89b4d;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    width: 550px;
+}
+.about p{
+    color: #000;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/*contact*/
+
+input[type=text], #email, select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #f89b4d;
+    color: white;
+    padding: 12px 20px;
+    border: 2px solid #f89b4d;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #fff;
+    color: #f89b4d;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .contact form{
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+  }
+  .contact h1{
+    text-align: center;
+    font-size: 60px;
+    font-family: "Segoe UI Light", serif;
+    color: #f89b4d;
+    font-weight: bold;
+    
+}
