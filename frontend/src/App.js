@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 
 function App() {
+
   return (
     <Router>
     {/*Ici on insère le composant navbar*/} 
@@ -12,6 +13,7 @@ function App() {
         <Route exact path='/login' element={<Login/>} />
     </Routes>
     </Router>
+
   );
 }
 
