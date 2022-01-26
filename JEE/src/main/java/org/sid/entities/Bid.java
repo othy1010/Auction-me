@@ -17,7 +17,6 @@ public class Bid {
 	private Long bidId ;
 	private Long itemId;
 	private Long userId;
-	private String title ;
-	private String text ;
-	
+	private float price;
+	private Boolean isMax;
 }

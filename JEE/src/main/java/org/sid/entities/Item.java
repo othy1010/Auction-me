@@ -37,7 +37,9 @@ public class Item {
 		@JoinColumn(name="bidId")
 		private List<Bid> bids = new ArrayList<Bid>();
 		private Long categoryId;
-
+		private Boolean isApprooved;
+		private String title ;
+		private String text ;		
 }
 
 

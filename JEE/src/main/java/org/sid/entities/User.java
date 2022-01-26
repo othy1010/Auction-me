@@ -53,7 +53,8 @@ public class User {
 	private String email;
 	@Column(length = 50)
 	private String password;
-	private int isAdmin;
+	private Boolean isAdmin;
+	private Boolean isConfirmed;
 	@Column(length = 50)
 	private String paymentAccount;
 	@Fetch(value = FetchMode.SUBSELECT)
