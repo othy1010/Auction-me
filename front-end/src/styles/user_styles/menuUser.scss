@@ -1,0 +1,35 @@
+
+.user_menu{
+  vertical-align: middle;
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+}
+.user_menu button{
+  padding: 5px 10px;
+  margin-left: 50px;
+  width: fit-content;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+  border-color: #f89b4d ;
+  color: #f89b4d;
+  box-shadow: 0 2px #999;
+}
+.user_menu button#new_auction{
+  background-color: #f89b4d;
+  font-weight: bold;
+  border-color: #ffffff ;
+  color: #ffffff;
+}
+
+.user_menu button:hover, .user_menu button#new_auction:hover{
+  border-color: white;
+  background-color: #ab662c;
+  color: white;
+}
+.user_menu button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

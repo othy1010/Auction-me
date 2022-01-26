@@ -1,0 +1,80 @@
+.navadmin{
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #A980F8;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+.navadmin .logo{
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 15px;
+}
+.navadmin .logo img{
+    width:30px;
+    float: left;
+    position: relative;
+}
+.navadmin a{
+    float: left;
+    font-family: "Myriad Pro Light", serif;
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navadmin .logo{
+    margin-right: 20px;
+}
+.navadmin a:hover{
+    background-color: rgba(0, 0, 0, 0.29);
+}
+.navadmin a[id='logo']:hover{
+    background: none;
+}
+
+.logout{
+    float: right;
+ }
+.logout button{
+    padding: 5px 10px;
+    margin-left: 10px;
+    margin-right: 120px;
+    margin-top: 0px;
+    position: relative;
+    bottom: 4px;
+    width: 110px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    border-color: rgba(169, 128, 248, 0);
+}
+.logout button#logout{
+    color: white;
+    background-color: #FD809E;
+}
+.logout button#logout:hover{
+    color: #FD809E;
+    background-color: white;
+    border: 2px solid #FD809E;
+}
+
+.logout button:active{
+    box-shadow: 0 3px #362654;
+    transform: translateY(3px);
+}
+
+.navadmin .bar{
+    padding-top: 10px;
+    margin-left: 60%;
+}
