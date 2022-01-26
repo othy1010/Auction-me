@@ -1,0 +1,53 @@
+.UsersList{
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    /*border: 1px solid black;*/
+}
+
+.search-container form{
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+}
+
+.search-container input{
+    width: 400px;
+    height: 30px;
+}
+
+.search-container button{
+    height: 36px;
+    background-color: #f89b4d;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.UserCard{
+    display: inline-flex;
+    padding: 5px;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+    width: 500px;
+    border-radius: 3%;
+    margin-left: 100px;
+    font-size: 17px;
+}
+
+.UserCard img{
+    width: 100px;
+    height: 100px;
+}
+
+.UserCard p{
+    margin-left: 30px;
+}
+.UserCard span{
+    font-weight: bold;
+}
+
+.UsersList ul {
+    list-style-type: none;
+}

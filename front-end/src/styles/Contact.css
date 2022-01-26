@@ -1,0 +1,44 @@
+.contact input[type=text], .contact #email, .contact select, .contact textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  .contact input[type=submit] {
+    background-color: #f89b4d;
+    color: white;
+    padding: 12px 20px;
+    border: 2px solid #f89b4d;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  .contact input[type=submit]:hover {
+    background-color: #fff;
+    color: #f89b4d;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .contact form{
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+  }
+  .contact h1{
+    text-align: center;
+    font-size: 60px;
+    font-family: "Segoe UI Light", serif;
+    color: #f89b4d;
+    font-weight: bold;
+    
+}
