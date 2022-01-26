@@ -1,0 +1,49 @@
+/* Footer */
+.footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #A980F8;
+    margin-top: 100px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+
+    table {
+        text-align: left;
+        font-size: 10px;
+        width: 100%;
+        vertical-align: bottom;
+    }
+;
+
+    thead {
+        font-weight: bold;
+        color: #161324;
+    }
+;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    img#facebook{
+        width:20px;
+    }
+    img#twitter{
+        width:21px;
+    }
+    img#insta{
+        width:21px;
+    }
+    img#gmail{
+        width:31px;
+    }
+    td#logo{
+        text-align: center;
+    }
+    td#logo img{
+        width: 50px;
+    }
+}
