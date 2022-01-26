@@ -9,7 +9,7 @@ const MenuAdmin = () => {
         <div className='MenuAdmin'>
             <div className="MenuElement" id="viewUsers">
                 <img src={user} alt="user" />
-                <a href='/'>View users</a>
+                <a href='/UsersList'>View users</a>
                 <p>Here you can view informations about all registerd users.
                     Also from here you are able to approve them.
                 </p>
