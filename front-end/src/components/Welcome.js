@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../styles/admin_styles/Welcome.css'
-import bid from "../../assets/Bid.jpg"
+import '../styles/Welcome.css'
+import bid from "../assets/Bid.jpg"
 import {Link} from "react-router-dom";
 
 const Welcome = () => {

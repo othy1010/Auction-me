@@ -4,7 +4,7 @@ $pink: rgb(253, 128, 158);
 $whitie:  rgba(255, 255, 255, 0.89);
 $blackie: rgba(0, 0, 0, 0.29);
 
-.top-nav{
+.user_top-nav{
     overflow: hidden;
     list-style-type: none;
     background-color: $purple;
@@ -13,7 +13,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     padding: 5px 10px;
     font-size: 18px;
 }
-.navigation{
+.user_navigation{
     a{
         float: left;
         font-family: "Myriad Pro Light", serif;
@@ -62,7 +62,7 @@ $blackie: rgba(0, 0, 0, 0.29);
 }
 
 
-.search {
+.user_search {
     float: left;
     margin-left: 10px;
     vertical-align: center;
@@ -91,33 +91,21 @@ $blackie: rgba(0, 0, 0, 0.29);
 ;
 }
 
-.account {
+.user_account {
     float: right;
     padding-top: 5px;
-    button{
+    button#logout{
         padding: 5px 10px;
         margin-left: -100px;
         width: 130px;
         border-radius: 6px;
         cursor: pointer;
-        background-color: white;
         font-weight: bold;
         border-color: rgba(169, 128, 248, 0);
-        transform: translateX(100px);
-    } ;
-    button#login{
-        color: $purple;
-    };
-    button#login:hover{
-        background-color: $purple;
-        color: white;
-        border: 2px solid white;
-    };
-    button#register{
         color: white;
         background-color: $pink;
     };
-    button#register:hover{
+    button#logout:hover{
         color: $pink;
         background-color: white;
         border: 2px solid $pink;

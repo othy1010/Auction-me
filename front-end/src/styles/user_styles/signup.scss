@@ -4,18 +4,18 @@ $pink: rgb(253, 128, 158);
 $whitie:  rgba(255, 255, 255, 0.89);
 $blackie: rgba(0, 0, 0, 0.29);
 
-.top{
+.user_top{
   background-color: $purple;
   height: 30px;
   padding: 20px;
 }
-.signUpForm {
+.user_signUpForm {
   body {
     justify-content: center;
     font-size: 15px;
   }
 
-  .form {
+  .user_form {
     height: fit-content;
     padding: 15px;
     margin-top: 40px;
@@ -37,7 +37,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     text-align: center;
   }
 
-  .field {
+  .user_field {
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     display: none;
   }
 
-  .custom-file-upload {
+  .user_custom-file-upload {
     border-radius: 50%;
     display: inline-block;
     position: relative;
@@ -57,7 +57,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     margin-bottom: 25px;
   }
 
-  .img-wrap {
+  .user_img-wrap {
     position: relative;
     width: 150px;
     height: 150px;
@@ -65,7 +65,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     border-radius: 50%;
   }
 
-  .img-upload:before {
+  .user_img-upload:before {
     content: "\f093";
     font-size: 90px;
     position: absolute;
@@ -83,7 +83,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     background-color: #fff;
   }
 
-  .img-upload:hover:before {
+  .user_img-upload:hover:before {
     background-color: #ffffff;
     opacity: 0.9;
     background-image: url('/assets/upload.png');
@@ -121,8 +121,10 @@ $blackie: rgba(0, 0, 0, 0.29);
     color: #bebebe;
   }
 
-  .nom, .prenom, .description, .adress, .postal, .city, .country, .phone, .cardNumber, .expireDate, cvv,
-  .password, .confPassword, .email {
+  .user_nom, .user_prenom, .user_description, .user_adress,
+  .user_postal, .user_city, .user_country, .user_phone,
+  .user_cardNumber, .user_expireDate, .user_cvv,.user_email,
+  .user_password, .user_confPassword {
     text-align: center;
     text-transform: uppercase;
     font-weight: normal;
@@ -149,7 +151,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     border: none;
   }
 
-  .save {
+  .user_save {
     font-weight: 600;
     left: -20px;
     text-transform: uppercase;
@@ -159,7 +161,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     box-shadow: 10px 0px 20px 0px $purple;
   }
 
-  .edit, .confirm {
+  .user_edit, .user_confirm {
     color: #fff;
     width: 180px;
     background: $purple;
@@ -171,11 +173,11 @@ $blackie: rgba(0, 0, 0, 0.29);
     width: 180px;
   }
 
-  .save:hover {
+  .user_save:hover {
     box-shadow: 5px 4px 8px 0 $purple;
   }
 
-  .edit:hover, .confirm:hover {
+  .user_edit:hover, .user_confirm:hover {
     box-shadow: 5px 4px 8px 0 $pink;
     background: $dark-purple;
   }
@@ -184,17 +186,17 @@ $blackie: rgba(0, 0, 0, 0.29);
     outline: none;
   }
 
-  .buttons {
+  .user_buttons {
     display: flex;
     flex-direction: row;
   }
 
-  .row {
+  .user_row {
     display: flex;
     flex-direction: row;
   }
 
-  .text-danger {
+  .user_text-danger {
     color: darkred;
     font-style: oblique;
   }

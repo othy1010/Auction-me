@@ -1,4 +1,3 @@
-import UserFooter from "../components/User/UserFooter";
 import React from "react";
 import SignUpForm from "../components/SignUpForm";
 import "../styles/user_styles/signup.scss"
@@ -6,9 +5,9 @@ import "../styles/user_styles/signup.scss"
 
 function SignUp(){
     return (
-        <div className="signUpForm">
+        <div className="user_signUpForm">
             <SignUpForm />
-            <UserFooter />
+            <br/><br/>
         </div>
     )
 }

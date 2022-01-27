@@ -1,0 +1,34 @@
+
+.user_header{
+  padding: 10px;
+  background: white;
+  color: #fff;
+  width: 100%;
+  height: 500px;
+  vertical-align: middle;
+}
+.user_left{
+  float: left;
+  margin-top: 50px;
+  margin-left: 80px;
+  font-size: 100px;
+  font-family: "Segoe UI Light", serif;
+  font-kerning: none;
+  color: black;
+  line-height:100px;
+
+}
+.user_right{
+  float: right;
+  margin-right: 80px;
+}
+.user_TL{
+  //-webkit-text-stroke: 2px black;
+  font-family: "Segoe UI Black", serif;
+  color: #FD809E;
+}
+.user_or{
+  -webkit-text-stroke: 4px #FD809E ;
+  font-family: "Segoe UI Black", serif;
+  color: white;
+}

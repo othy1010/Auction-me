@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../styles/admin_styles/Contact.css'
+import '../styles/Contact.css'
 
 const Contact = () => {
     return (
-        <div class="contact" id="contact">
+        <div className="contact" id="contact">
             <h1>Contact Us</h1>
             <br/><br/><br/>
             <form>
@@ -16,7 +16,7 @@ const Contact = () => {
     
     
                 <label for="help">How can we help ?</label>
-                <textarea id="help" name="help" style={{height: "200px"}} required></textarea>
+                <textarea id="help" name="help" style={{height: "200px"}} required/>
     
                 <input type="submit" value="Send" />
   

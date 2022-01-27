@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import "../../styles/user_styles/footer.scss"
 
-const UserFooter = () => {
+const Footer = () => {
     // noinspection HtmlUnknownTarget
     return (
         <div className="user_footer">
@@ -23,9 +23,9 @@ const UserFooter = () => {
                         <img src="/images/logo.png" alt=""/>
                     </td>
                     <td>
-                        <NavLink exact to="/about-us">About us - TorL</NavLink>
+                        <a href="#about">About us - TorL</a>
                     </td>
-                    <td><NavLink exact to="/privacy-policy">Our Privacy Policy</NavLink></td>
+                    <td><NavLink exact to="/privacy">Our Privacy Policy</NavLink></td>
                     <td>torl.auction@gmail.com</td>
                     <td>
                         <a href="http://www.facebook.com">
@@ -43,7 +43,7 @@ const UserFooter = () => {
                     <td/>
                     <td/>
                     <td>
-                        <NavLink exact to="/contact-us">Contact Us</NavLink>
+                        <a href="#contact">Contact Us</a>
                     </td>
                     <td/>
                 </tr>
@@ -54,4 +54,4 @@ const UserFooter = () => {
     );
 };
 
-export default UserFooter;
+export default Footer;

@@ -4,15 +4,15 @@ import "../styles/user_styles/signup.scss"
 
 const SignUpForm = () => {
     const ImgUpload =({ onChange, src })=>
-        <label htmlFor="photo-upload" className="custom-file-upload fas">
-            <div className="img-wrap img-upload" >
+        <label htmlFor="photo-upload" className="user_custom-file-upload user_fas">
+            <div className="user_img-wrap user_img-upload" >
                 <img for="photo-upload" src={src} alt=""/>
             </div>
             <input id="photo-upload" type="file" onChange={onChange}/>
         </label>
 
     const Nom =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="nom">
                 Last Name:
             </label>
@@ -26,7 +26,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Prenom =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="prenom">
                 First Name:
             </label>
@@ -40,7 +40,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Description =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="desc">
                 Description:
             </label>
@@ -53,7 +53,7 @@ const SignUpForm = () => {
                 />
         </div>
     const Phone =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="phone">
                 Phone Number:
             </label>
@@ -67,7 +67,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Adress =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="adress">
                 Adress:
             </label>
@@ -79,7 +79,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Postal =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="postal">
                 Postal Code:
             </label>
@@ -93,7 +93,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const City =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="city">
                 City:
             </label>
@@ -105,7 +105,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Country =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="country">
                 Country:
             </label>
@@ -117,7 +117,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Email =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="email">
                 Email:
             </label>
@@ -129,7 +129,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const Password =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="password">
                 Password:
             </label>
@@ -141,7 +141,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const ConfPassword =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="confPassword">
                 Confirm Password:
             </label>
@@ -153,7 +153,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const CardNumber =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="cardNum">
                 Card Number:
             </label>
@@ -168,7 +168,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const ExpireDate =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="expireDate">
                 Expire Date:
             </label>
@@ -181,7 +181,7 @@ const SignUpForm = () => {
                 required/>
         </div>
     const CVV =({ onChange, value })=>
-        <div className="field">
+        <div className="user_field">
             <label htmlFor="cvv">
                 CVV:
             </label>
@@ -225,13 +225,13 @@ const SignUpForm = () => {
                         nom, prenom, description, adress, postal, city, country, phone, cardNumber, expireDate, cvv,
                         email, password,
                     })=>
-        <div className="form">
+        <div className="user_form">
             <form onSubmit={onSubmit}>
                 <h1>Your Profil - Preview</h1>
                 <table>
                     <tr>
                         <td>
-                            <div className="img-wrap">
+                            <div className="user_img-wrap">
                                 <img src={src} alt=""/>
                             </div>
                         </td>
@@ -240,18 +240,18 @@ const SignUpForm = () => {
                                 <td colSpan={2}><h2>General Information</h2></td>
                             </tr>
                             <tr>
-                                <td><b>Last Name:</b></td> <td><div className="nom">{nom}</div></td>
+                                <td><b>Last Name:</b></td> <td><div className="user_nom">{nom}</div></td>
                             </tr>
                             <tr>
-                                <td><b>First Name:</b></td> <td><div className="prenom">{prenom}</div></td>
+                                <td><b>First Name:</b></td> <td><div className="user_prenom">{prenom}</div></td>
                             </tr>
                             <tr>
-                                <td><b>Desciption:</b></td><td><div className="description">{description}</div>
+                                <td><b>Desciption:</b></td><td><div className="user_description">{description}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td><b>Email:</b></td>
-                                <td><div className="email">{email}</div></td>
+                                <td><div className="user_email">{email}</div></td>
                             </tr>
                         </td>
                         <td>
@@ -260,23 +260,23 @@ const SignUpForm = () => {
                             </tr>
                             <tr>
                                 <td><b>Phone Number:</b> </td>
-                                <td> <div className="phone">{phone}</div></td>
+                                <td> <div className="user_phone">{phone}</div></td>
                             </tr>
                             <tr>
                                 <td><b>Adress:</b> </td>
-                                <td><div className="adress">{adress}</div></td>
+                                <td><div className="user_adress">{adress}</div></td>
                             </tr>
                             <tr>
                                 <td><b>Postal Code:</b> </td>
-                                <td><div className="postal">{postal}</div></td>
+                                <td><div className="user_postal">{postal}</div></td>
                             </tr>
                             <tr>
                                 <td><b>City:</b> </td>
-                                <td><div className="city">{city}</div></td>
+                                <td><div className="user_city">{city}</div></td>
                             </tr>
                             <tr>
                                 <td><b>Country:</b></td> <
-                                td><div className="country">{country}</div></td>
+                                td><div className="user_country">{country}</div></td>
                             </tr>
                         </td>
                     </tr>
@@ -288,25 +288,25 @@ const SignUpForm = () => {
                             </tr>
                             <tr>
                                 <td><b>Card Number:</b> </td>
-                                <td><div className="cardNumber">{cardNumber}</div></td>
+                                <td><div className="user_cardNumber">{cardNumber}</div></td>
                             </tr>
                             <tr>
                                 <td><b>Expire Date:</b> </td>
-                                <td><div className="expireDate">{expireDate}</div></td>
+                                <td><div className="user_expireDate">{expireDate}</div></td>
                             </tr>
                             <tr>
                                 <td><b>CVV:</b> </td>
-                                <td><div className="cvv">{cvv}</div></td>
+                                <td><div className="user_cvv">{cvv}</div></td>
                             </tr>
                         </td>
                         <td/>
                     </tr>
 
                 </table>
-               <div className="buttons">
-                    <button type="submit" className="edit">Edit Profile </button>
+               <div className="user_buttons">
+                    <button type="submit" className="user_edit">Edit Profile </button>
                    <Link to="/login">
-                       <button type="submit" className="confirm"
+                       <button type="submit" className="user_confirm"
                                onClick={createAcc({src}, {nom}, {prenom}, {description}, {adress},
                                {postal}, {city}, {country}, {phone}, {cardNumber}, {expireDate}, {cvv},
                                {email}, {password})}>Create my account</button>
@@ -318,11 +318,11 @@ const SignUpForm = () => {
 
 
     const Edit =({ onSubmit,  children, })=>
-        <div className="form">
+        <div className="user_form">
             <h1>Sign up Form</h1>
             <form onSubmit={onSubmit}>
                 {children}
-                <button type="submit"className="save">Save</button>
+                <button type="submit" className="user_save">Save</button>
             </form>
         </div>
 
@@ -458,7 +458,7 @@ const SignUpForm = () => {
                                     </td>
                                     <td>
                                         <h2>General Information</h2>
-                                        <div className="row">
+                                        <div className="user_row">
                                             <Nom onChange={this.editNom} value={nom}/>
                                             <Prenom onChange={this.editPrenom} value={prenom}/>
                                         </div>
@@ -470,15 +470,15 @@ const SignUpForm = () => {
                                     <td>
                                         <h2>Personal Information</h2>
                                         <Adress onChange={this.editAdress} value={adress}/>
-                                        <div className="row">
+                                        <div className="user_row">
                                             <City onChange={this.editCity} value={city}/>
                                             <Country onChange={this.editCountry} value={country}/>
                                         </div>
-                                       <div className="row">
+                                       <div className="user_row">
                                             <Postal onChange={this.editPostal} value={postal}/>
                                             <Phone onChange={this.editPhone} value={phone}/>
                                         </div>
-                                        <div className="text-danger">{this.state.errors.phone}</div>
+                                        <div className="user_text-danger">{this.state.errors.phone}</div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -486,7 +486,7 @@ const SignUpForm = () => {
                                     <td>
                                         <h2>Payment Details</h2>
                                         <CardNumber onChange={this.editCard} value={cardNumber}/>
-                                        <div className="row">
+                                        <div className="user_row">
                                             <ExpireDate onChange={this.editExpireDate} value={expireDate}/>
                                             <CVV onChange={this.editCVV} value={cvv}/>
                                         </div>
@@ -499,7 +499,7 @@ const SignUpForm = () => {
                                         <Email onChange={this.editEmail} value={email}/>
                                         <Password onChange={this.editPwd} value={password}/>
                                         <ConfPassword onChange={this.editConfPwd} value={confPassword}/>
-                                        <div className="text-danger">{this.state.errors.confPassword}</div>
+                                        <div className="user_text-danger">{this.state.errors.confPassword}</div>
 
                                     </td>
                                 </tr>
@@ -531,7 +531,7 @@ const SignUpForm = () => {
 
     return (
         <div>
-            <div className="top"/>
+            <div className="user_top"/>
             <CardProfile/>
         </div>
 

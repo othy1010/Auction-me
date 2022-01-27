@@ -3,7 +3,7 @@
     list-style-type: none;
     background-color: #A980F8;
     position: -webkit-sticky; /* Safari */
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     padding: 10px 10px;
