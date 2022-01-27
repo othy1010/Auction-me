@@ -7,6 +7,7 @@ const UserAboutUs = () => {
     return (
         <div>
             <NavUser />
+            <br/>
                <About />
             <UserFooter />
         </div>
