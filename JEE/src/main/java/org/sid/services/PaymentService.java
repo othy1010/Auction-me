@@ -8,7 +8,7 @@ import org.sid.entities.Payment;
 import org.sid.entities.User;
 
 public interface PaymentService {
-   Payment saveBid(Payment bid);
+   Payment savePayment(Payment payment);
 
    Payment findPaymentByBid(Long bidId);
 

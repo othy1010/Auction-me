@@ -40,13 +40,13 @@ public class PaymentServiceImpl implements PaymentService {
    private PaymentRepo paymentRepo;
 
    @GetMapping("payment")
-   public List<Payment> getBids() {
+   public List<Payment> getPayments() {
       return this.paymentRepo.findAll();
    }
 
    @Override
    @PostMapping("payment")
-   public Payment saveBid(@RequestBody Payment payment) {
+   public Payment savePayment(@RequestBody Payment payment) {
       return paymentRepo.save(payment);
 
    }
