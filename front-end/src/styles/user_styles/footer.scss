@@ -5,15 +5,20 @@ $pink: rgb(253, 128, 158);
 $whitie:  rgba(255, 255, 255, 0.89);
 $blackie: rgba(0, 0, 0, 0.29);
 
+body{
+    font-family: "Segoe UI Light", serif;
+}
+
 .user_footer {
     padding: 10px;
     text-align: center;
     background-color: #A980F8;
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 15px;
     color: white;
     font-weight: bold;
-
+    height: fit-content
+;
     table {
         text-align: left;
         font-size: 10px;
