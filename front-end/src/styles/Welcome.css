@@ -8,8 +8,8 @@
 }
 .left{
     float: left;
-    margin-top: 260px;
-    margin-left: 80px;
+    margin-top: 140px;
+    margin-left: 50px;
     font-size: 85px;
     font-family: "Segoe UI Light", serif;
     font-kerning: none;
@@ -21,7 +21,7 @@
 .right{
     float: right;
     margin-right: 80px;
-    margin-top: 95px;
+    margin-top: 0px;
     margin-right: 15px;
 }
 

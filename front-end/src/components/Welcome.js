@@ -17,7 +17,7 @@ const Welcome = () => {
         </div>
         
         <div className="right">
-          <img src={bid}  style={{width: "630px" , height: "530px"}} alt='bid' />
+          <img src={bid}  style={{width: "580px" , height: "480px"}} alt='bid' />
         </div>
   </div>
     );

@@ -1,9 +1,8 @@
 .UsersList{
-    margin-top: 140px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    /*border: 1px solid black;*/
 }
 
 .search-container form{
@@ -14,11 +13,13 @@
 
 .search-container input{
     width: 400px;
-    height: 30px;
+    height: 35px;
+    padding: 10px;
 }
 
 .search-container button{
-    height: 36px;
+    height: 35px;
+    width: 15%;
     background-color: #f89b4d;
     border: none;
     cursor: pointer;
@@ -28,7 +29,7 @@
 .UserCard{
     display: inline-flex;
     padding: 5px;
-    background-color: #f1f1f1;
+    background-color: white;
     padding-left: 20px;
     width: 500px;
     border-radius: 3%;
@@ -47,7 +48,16 @@
 .UserCard span{
     font-weight: bold;
 }
-
+.UserCard a{
+    text-decoration: none;
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 18px;
+    color: #f89b4d
+}
+.UserCard a:hover{
+    text-decoration: underline;
+}
 .UsersList ul {
     list-style-type: none;
 }

@@ -3,7 +3,7 @@
     list-style-type: none;
     background-color: #A980F8;
     position: -webkit-sticky; /* Safari */
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     padding: 10px 10px;
@@ -34,7 +34,7 @@
 .navadmin .logo{
     margin-right: 20px;
 }
-.navadmin a:hover{
+.navadmin .bar a:hover{
     background-color: rgba(0, 0, 0, 0.29);
 }
 .navadmin a[id='logo']:hover{
@@ -47,10 +47,10 @@
 .logout button{
     padding: 5px 10px;
     margin-left: 10px;
-    margin-right: 120px;
+    margin-right: 80px;
     margin-top: 0px;
     position: relative;
-    bottom: 4px;
+    bottom: 8px;
     width: 110px;
     height: 40px;
     border-radius: 50px;

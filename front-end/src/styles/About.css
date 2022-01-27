@@ -1,6 +1,5 @@
 .about{
     text-align: center;
-    font-size: 60px;
     font-family: "Segoe UI Light", serif;
     color: #f89b4d;
     font-weight: bold;
@@ -11,7 +10,14 @@
 .about p{
     color: #000;
     font-size: 20px;
-    background-color: #f1f1f1;
+    background-color: white;
     padding: 20px;
     font-weight: normal;
+}
+
+.about h1{
+    font-size: 60px;
+    font-family: "Segoe UI Light", serif;
+    font-weight: bold;
+    margin-bottom: 80px;
 }

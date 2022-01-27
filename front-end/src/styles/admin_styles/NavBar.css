@@ -27,14 +27,13 @@
     color: #f2f2f2;
     text-align: left;
     padding: 5px 10px;
-    margin-right: 10px;
     text-decoration: none;
     cursor: pointer;
 }
 .logo{
     margin-right: 20px;
 }
-.navbar a:hover{
+.navbar .bar a:hover{
     background-color: rgba(0, 0, 0, 0.29);
 }
 .navbar a[id='logo']:hover{
@@ -50,7 +49,7 @@
     margin-right: 120px;
     margin-top: 0px;
     position: relative;
-    bottom: 4px;
+    bottom: 9px;
     width: 110px;
     height: 40px;
     border-radius: 50px;

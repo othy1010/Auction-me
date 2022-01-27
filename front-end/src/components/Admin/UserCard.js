@@ -7,6 +7,7 @@ const UserCard = () => {
         <li>
             <div className="UserCard">
                 <img src={user} alt="user" />
+                <a href="/user-info">See more</a>
                 <p><span>Name :</span> Mark Otto
                 <br /><br />
                 <span>Email :</span> Mark@gmail.com
