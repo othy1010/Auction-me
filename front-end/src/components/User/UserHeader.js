@@ -5,12 +5,12 @@ const UserHeader = () => {
     return (
         <div className="user_header">
             <div className="user_left">
-                <spam classname="user_TL">T</spam>
+                <spam className="user_TL">T</spam>
                 ake it
                 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <spam classname="user_or">or</spam>
+                <spam className="user_or">or</spam>
                 <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <spam classname="user_TL">L</spam>
+                <spam className="user_TL">L</spam>
                 eave it
             </div>
             <div className="user_right">
