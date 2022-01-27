@@ -8,10 +8,12 @@ $blackie: rgba(0, 0, 0, 0.29);
     overflow: hidden;
     list-style-type: none;
     background-color: $purple;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
     padding: 5px 10px;
+    margin-top: -5px;
     font-size: 18px;
+    position: fixed;
+    width: 100%;
+    z-index:1;
 }
 .user_navigation{
     a{
@@ -93,7 +95,7 @@ $blackie: rgba(0, 0, 0, 0.29);
 
 .user_account {
     float: right;
-    padding-top: 5px;
+    margin-right: 50px;
     button#logout{
         padding: 5px 10px;
         margin-left: -100px;
