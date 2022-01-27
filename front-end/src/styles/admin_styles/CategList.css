@@ -1,0 +1,100 @@
+.CategList{
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+    margin-top: 80px;
+}
+.CategList ul{
+    list-style-type: none;
+}
+
+.CategList .forms{
+    display: inline-flex;
+    margin-left: 70px;
+}
+
+.CategList input{
+    height: 30px;
+}
+
+.CategList input[type=submit]{
+    width: 80px;
+    cursor: pointer;
+}
+
+.CategList .add-categ{
+    margin-left: 80px;
+}
+.CategList .add-categ input{
+    margin-left: 10px;
+}
+.CategList .add-categ input[type=submit]{
+    background: #f89b4d;
+    color: white;
+    border: 1px solid #f89b4d;
+}
+.CategList .add-categ input[type=submit]:hover{
+    background: none;
+    color: #f89b4d;
+    border: 1px solid #f89b4d;
+}
+
+.CategList .search-categ input[type=submit]{
+    background: none;
+    color: #f89b4d;
+    border: 1px solid #f89b4d;
+}
+.CategList .search-categ input[type=submit]:hover{
+    background: #f89b4d;
+    color: white;
+    border: 1px solid #f89b4d;
+}
+
+.CategCard {
+    display: inline-flex;
+    background: white;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.CategCard h3{
+    margin-left: 150px;
+    font-weight: none;
+}
+
+.CategCard span{
+    color: #f89b4d;
+}
+
+.CategCard button{
+    height: 20px;
+    margin-top: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+
+}
+
+.CategCard #edit{
+    background: none;
+    color: black;
+    border: 1px solid silver;
+}
+
+.CategCard #delete{
+    background: #F44336;
+    color: white;
+    border: none;
+}
+
+.CategCard #delete:hover{
+    background-color: #eb6e65;
+}
+
+.CategCard #edit:hover{
+    background-color: #2a97e0;
+    color: white;
+}
+

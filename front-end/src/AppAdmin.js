@@ -9,6 +9,8 @@ import SignUp from "./pages/SignUp";
 import NotFoundAdmin from "./pages/Admin/NotFoundAdmin";
 import Home from "./pages/Home";
 import Privacy from "./pages/Privacy";
+import UserDetails from './pages/Admin/UserDetails';
+import CategList from './pages/Admin/CategList';
 
 const AppAdmin = () => {
     return (
@@ -18,6 +20,8 @@ const AppAdmin = () => {
             <Route exact path="/sign-up" element={<SignUp/>} />
             <Route exact path='/AdminHome' element={<AdminHome />} />
             <Route exact path='/UsersList' element={<UsersList/>} />
+            <Route exact path='/user-info' element={<UserDetails/>} />
+            <Route exact path='/categories' element={<CategList />} />
 
             <Route exact path='/privacy' element={<Privacy/>} />
             <Route path="*" element={<NotFoundAdmin/>} />

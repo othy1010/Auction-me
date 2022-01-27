@@ -1,0 +1,68 @@
+.UserDetails{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    padding: 5px;
+    background-color: white;
+    padding-top: 50px;
+    padding-left: 40px;
+    width: 700px;
+    height: 390px;
+    border-radius: 3%;
+    font-size: 17px;
+}
+
+.UserDetails img{
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.UserDetails p{
+    margin-left: 10px;
+}
+.UserDetails span{
+    font-weight: bold;
+}
+
+.UserDetails .bloc{
+    position: relative;
+    left: 170px;
+    bottom: 198px;
+    width: 500px;
+}
+
+.UserDetails button{
+    position: relative;
+    bottom: 160px;
+    margin: 5px ;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.UserDetails #approve{
+    background: white;
+    color: #A980F8;
+    border: 2px solid #A980F8;
+    
+}
+.UserDetails #refus{
+    background: #FD809E;
+    color: white;
+    border: 2px solid #FD809E;
+    
+}
+.UserDetails #approve:hover{
+    background: #A980F8;
+    color: white;
+    border: 2px solid #A980F8;
+    
+}
+.UserDetails #refus:hover{
+    background: white;
+    color: #FD809E;
+    border: 2px solid FD809E;
+    
+}

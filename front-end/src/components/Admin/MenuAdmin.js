@@ -23,7 +23,7 @@ const MenuAdmin = () => {
             </div>
             <div className="MenuElement" id="viewCateg">
             <img src={category} alt="caegory" />
-                <a href='/'>View categories</a>
+                <a href='/categories'>View categories</a>
                 <p>Here you can view all categories. You can also add a new categorie or delete an existed one</p>
             </div>
         </div>
