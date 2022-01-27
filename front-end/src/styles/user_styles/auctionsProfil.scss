@@ -1,0 +1,38 @@
+.auctionCard {
+  position: relative;
+  color: #054231;
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding: 8px;
+  text-align: left;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  
+  .user_img-wrap {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: center;
+  }
+  img {
+    width: auto;
+    height: 100%;
+    position: relative;
+  }
+  table{
+    text-align-all: left;
+  }
+}
+
+.auctionCard:hover {
+  left: 0;
+  color: #fff;
+  background-color: #2b2b2b;
+}
+
+.auctionCard:focus {
+  outline: none;
+}

@@ -1,0 +1,76 @@
+$purple: #A980F8;
+$dark-purple: #362654;
+$pink: rgb(253, 128, 158);
+$whitie:  rgba(255, 255, 255, 0.89);
+$blackie: rgba(0, 0, 0, 0.29);
+
+
+.user_profil {
+  body {
+    font-size: 10px;
+  }
+  h1 {
+    text-align: center;
+    font-family: "Segoe UI Light", serif;
+  }
+  h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Segoe UI Light", serif;
+  }
+  .user_profilCard {
+    height: fit-content;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(176, 132, 255, 0.21);
+    animation: open .5s;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    align-items: center;
+  }
+
+  .user_img-wrap {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: center;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+    position: relative;
+  }
+
+  label {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    color: #676767;
+  }
+
+  .user_nom, .user_prenom, .user_description, .user_adress,
+  .user_postal, .user_city, .user_country, .user_phone,
+  .user_cardNumber, .user_expireDate, .user_cvv,.user_email,
+  .user_password, .user_confPassword {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #676767;
+    max-width: 220px;
+    overflow-wrap: break-word;
+  }
+  td{
+    padding-right: 5px;
+    font-size: 12px;
+  }
+  
+
+  .user_row {
+    display: flex;
+    flex-direction: row;
+  }
+
+}

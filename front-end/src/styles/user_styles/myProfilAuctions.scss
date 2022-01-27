@@ -1,0 +1,54 @@
+$purple: #A980F8;
+$dark-purple: #362654;
+$pink: rgb(253, 128, 158);
+$whitie:  rgba(255, 255, 255, 0.89);
+$blackie: rgba(0, 0, 0, 0.29);
+
+.user_card{
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  table{
+    padding-right: 5px;
+  }
+
+  h2,h3{
+    font-family: "Segoe UI Light", sans-serif;
+  }
+
+  .user_showHide{
+    position: relative;
+    float: right;
+    color: #220212;
+    letter-spacing: 1px;
+    margin: 20px 50px 20px 20px;
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    left: -20px;
+    text-transform: uppercase;
+    width: 190px;
+    background: $pink;
+    box-shadow: 5px 2px 10px 0px $purple;
+  }
+
+  .user_showHide:hover {
+    left: 0;
+    color: #fff;
+    width: 180px;
+    box-shadow: 5px 4px 8px 0 $purple;
+  }
+  .user_showHide:focus {
+    outline: none;
+  }
+  .user_showHide:active{
+    background-color: #512731;
+    color: white;
+    transform: translateY(4px);
+  }
+}

@@ -1,0 +1,26 @@
+$purple: #A980F8;
+$dark-purple: #362654;
+$pink: rgb(253, 128, 158);
+$whitie:  rgba(255, 255, 255, 0.89);
+$blackie: rgba(0, 0, 0, 0.29);
+
+.user_notifs{
+  align-content: center;
+  transform: translateX(25%);
+}
+
+.user_notif{
+  margin: 5px;
+  border-radius: 10px;
+  position: center;
+  padding: 5px;
+  border-collapse: collapse;
+
+  .user_sep{
+    border-bottom: black 2px solid;
+  }
+  h2,h3{
+    font-family: "Segoe UI Light", sans-serif;
+  }
+
+}
