@@ -7,6 +7,7 @@ const UserContactUs = () => {
     return (
         <div>
             <NavUser />
+            <br/>
             <Contact />
             <UserFooter />
         </div>
