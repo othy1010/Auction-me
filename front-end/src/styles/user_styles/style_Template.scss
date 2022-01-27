@@ -4,112 +4,44 @@ $pink: rgb(253, 128, 158);
 $whitie:  rgba(255, 255, 255, 0.89);
 $blackie: rgba(0, 0, 0, 0.29);
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Myriad Pro", serif;
-    padding: 5px;
-    background: #f1f1f1;
-}
-
-.user_header h1 {
-    font-size: 30px;
-    width: 100%;
-}
-
-
-.user_leftcolumn {
-    float: left;
-    width: 75%;
-}
-
-.user_leftcolumn_bottom{
-    float: left;
-    width: 80%;
-    position: relative;
-}
-
-.user_rightcolumn {
-    float: right;
-    width: 20%;
+body{
+    font-family: "Segoe UI", serif;
     background-color: #f1f1f1;
-    padding-left: 20px;
 }
 
-.user_card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 10px;
-}
-.user__card {
-    background-color: white;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.user_row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-
-
-
-@media screen and (max-width: 800px) {
-    .user_leftcolumn, .user_rightcolumn {
-        width: 100%;
-        padding: 0;
+.user_affichage{
+    display: flex;
+    flex-direction: row;
+    .user_leftcolumn {
+        width: 80%;
+        background-color: white;
+        margin-right: 20px;
     }
-}
-@media screen and (max-width: 400px) {
-    .user_navigation a {
-        float: none;
-        width: 100%;
+
+    .user_rightcolumn {
+        background-color: rgba(253, 128, 158, 0.23);
+        width: 20%;
+        font-size: 15px;
+        height: fit-content;
     }
+    .user_card{
+        margin: 10px;
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    table td{
+        padding: 5px;
+    }
+
 }
 
 
-div.user_gallery, div.user_fullGallery{
-    margin: 10px;
-    float: left;
-    width: 250px;
-}
-div.user_gallery{
-    border: 1px solid #ccc;
-    border-radius: 15%;
-}
 
-div.user_desc {
-    padding: 15px;
-    text-align: center;
-}
+
 
 
 .user_pagination {
     display: inline-block;
     transform: translateX(100px);
-}
-
-.user_pagination a {
-    color: black;
-    margin-top: 20px;
-    padding: 8px 10px;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.user_pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-}
-
-.user_pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
 }
