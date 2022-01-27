@@ -16,15 +16,18 @@ import React from 'react';
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+import Privacy from "./pages/Privacy";
 
 const AppUser = () => {
     return (
         <Routes>
             <Route exact path='/login' element={<Login/>} />
             <Route exact path="/sign-up" element={<SignUp/>} />
-                <Route exact path='/' element={<Home />} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/privacy' element={<Privacy/>} />
 
-                <Route exact path="/home" element={<HomeUser/>} />
+
+            <Route exact path="/home" element={<HomeUser/>} />
             <Route exact path="/my-profil" element={<MyProfil/>} />
             <Route exact path="/notifications" element={<Notifications/>} />
             <Route path="/all-auctions" element={<Results/>} />
