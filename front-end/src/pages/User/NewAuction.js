@@ -7,7 +7,7 @@ const NewAuction = () => {
     return (
         <div>
             <NavUser />
-            <br/>
+            <br/><br/>
             <NewAuctionForm/>
             <UserFooter />
         </div>
