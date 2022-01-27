@@ -151,7 +151,7 @@ $blackie: rgba(0, 0, 0, 0.29);
     border: none;
   }
 
-  .user_save {
+  .user_save,.user_cancel {
     font-weight: 600;
     left: -20px;
     text-transform: uppercase;
@@ -159,6 +159,9 @@ $blackie: rgba(0, 0, 0, 0.29);
     width: 20px;
     background: $pink;
     box-shadow: 10px 0px 20px 0px $purple;
+  }
+  .user_cancel{
+    background: #ff0037;
   }
 
   .user_edit, .user_confirm {
