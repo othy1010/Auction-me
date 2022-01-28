@@ -1,205 +1,22 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import "../styles/user_styles/signup.scss"
+import { ImgUpload, Nom, Prenom, Description, Phone,
+    Adress, Postal, City, Country, CardNumber, ExpireDate,
+    CVV, Email, Password, ConfPassword } from "./User/UserDef"
 
 const SignUpForm = () => {
-    const ImgUpload =({ onChange, src })=>
-        <label htmlFor="photo-upload" className="user_custom-file-upload user_fas">
-            <div className="user_img-wrap user_img-upload" >
-                <img for="photo-upload" src={src} alt=""/>
-            </div>
-            <input id="photo-upload" type="file" onChange={onChange}/>
-        </label>
-
-    const Nom =({ onChange, value })=>
+    const AgreeToTerms =({ onChange, value}) =>
         <div className="user_field">
-            <label htmlFor="nom">
-                Last Name:
+            <label htmlFor="terms">
+            <input id="terms" onChange={onChange} type="checkbox" value={value} required/>
+                I read the privacy policy and I agree to the use terms.
             </label>
-            <input
-                id="nom"
-                type="text"
-                onChange={onChange}
-                maxLength={25}
-                value={value}
-                placeholder="Bright"
-                required/>
-        </div>
-    const Prenom =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="prenom">
-                First Name:
-            </label>
-            <input
-                id="prenom"
-                type="text"
-                onChange={onChange}
-                maxLength={25}
-                value={value}
-                placeholder="Alexa"
-                required/>
-        </div>
-    const Description =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="desc">
-                Description:
-            </label>
-            <input
-                id="desc"
-                type="text"
-                onChange={onChange}
-                value={value}
-                placeholder="I like selling paintings."
-                />
-        </div>
-    const Phone =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="phone">
-                Phone Number:
-            </label>
-            <input
-                id="phone"
-                type="text"
-                onChange={onChange}
-                minLength={10}
-                maxLength={14}
-                value={value}
-                required/>
-        </div>
-    const Adress =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="adress">
-                Adress:
-            </label>
-            <input
-                id="adress"
-                type="text"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const Postal =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="postal">
-                Postal Code:
-            </label>
-            <input
-                id="postal"
-                type="text"
-                onChange={onChange}
-                minLength={4}
-                maxLength={10}
-                value={value}
-                required/>
-        </div>
-    const City =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="city">
-                City:
-            </label>
-            <input
-                id="city"
-                type="text"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const Country =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="country">
-                Country:
-            </label>
-            <input
-                id="country"
-                type="text"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const Email =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="email">
-                Email:
-            </label>
-            <input
-                id="email"
-                type="email"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const Password =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="password">
-                Password:
-            </label>
-            <input
-                id="password"
-                type="password"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const ConfPassword =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="confPassword">
-                Confirm Password:
-            </label>
-            <input
-                id="confPassword"
-                type="password"
-                onChange={onChange}
-                value={value}
-                required/>
-        </div>
-    const CardNumber =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="cardNum">
-                Card Number:
-            </label>
-            <input
-                id="nom"
-                type="number"
-                onChange={onChange}
-                minLength={8}
-                maxLength={19}
-                value={value}
-                placeholder="xxxx xxxx xxxx xxxx"
-                required/>
-        </div>
-    const ExpireDate =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="expireDate">
-                Expire Date:
-            </label>
-            <input
-                id="expireDate"
-                type="date"
-                onChange={onChange}
-                value={value}
-                placeholder="01/01/2030"
-                required/>
-        </div>
-    const CVV =({ onChange, value })=>
-        <div className="user_field">
-            <label htmlFor="cvv">
-                CVV:
-            </label>
-            <input
-                id="cvv"
-                type="number"
-                onChange={onChange}
-                minLength={3}
-                maxLength={3}
-                value={value}
-                placeholder="xxx"
-                required/>
         </div>
 
-
-    const createAcc= (src, nom, prenom, description, adress, postal,
+    function createAcc(src, nom, prenom, description, adress, postal,
                    city, country, phone, cardNumber, expireDate, cvv,
-                   email, password) => {
+                   email, password){
             const profil= {
                 "src":src,
                 "nom": nom,
@@ -306,7 +123,7 @@ const SignUpForm = () => {
                <div className="user_buttons">
                     <button type="submit" className="user_edit">Edit Profile </button>
                    <Link to="/login">
-                       <button type="submit" className="user_confirm"
+                       <button type="button" className="user_confirm"
                                onClick={createAcc({src}, {nom}, {prenom}, {description}, {adress},
                                {postal}, {city}, {country}, {phone}, {cardNumber}, {expireDate}, {cvv},
                                {email}, {password})}>Create my account</button>
@@ -322,7 +139,13 @@ const SignUpForm = () => {
             <h1>Sign up Form</h1>
             <form onSubmit={onSubmit}>
                 {children}
-                <button type="submit" className="user_save">Save</button>
+                <div className="user_row">
+                    <button type="submit" id="submitBtn"
+                            className="user_save">Save</button>
+                    <Link to="/login">
+                        <button type="cancel" className="user_cancel">Cancel</button>
+                    </Link>
+                </div>
             </form>
         </div>
 
@@ -332,7 +155,7 @@ const SignUpForm = () => {
             imagePreviewUrl: '/images/profile.jpg',
             nom:'', prenom:'', description:'-', postal:'', adress:'', city:'', country:'',  phone:'',
             cardNumber:'', expireDate:'', cvv:'', email:'', password:'', confPassword:'',
-            active: 'edit',
+            active: 'edit', agree:'false',
             errors:{}
         }
 
@@ -404,6 +227,10 @@ const SignUpForm = () => {
             const cvv = e.target.value;
             this.setState({ cvv, });
         }
+        editAgree = e =>{
+            const agree = e.target.checked;
+            this.setState({ agree, });
+        }
 
         handleSubmit= e =>{
             e.preventDefault();
@@ -434,6 +261,33 @@ const SignUpForm = () => {
                     errors["confPassword"] = "The two passwords don't match.";
                 }
             }
+            if( state.agree !== true){
+                isValid = false;
+                errors["agree"] = "You must agree to the use terms first.";
+            }
+            if(typeof state.expireDate !== "undefined")
+            {
+                let expire = new Date(state.expireDate);
+                let now = Date.now();
+                if(expire - now <= 0){
+                    errors["expireDate"] = "Unvalid card expire date.";
+                    isValid = false;
+                }
+            }
+            if (typeof state.cardNumber !== "undefined") {
+                let cardN = state.cardNumber.toString();
+                if(cardN.length< 8 || cardN.length > 19){
+                    isValid = false;
+                    errors["cardNumber"] = "The card number must contain 8 to 19 numbers.";
+                }
+            }
+            if (typeof state.cvv !== "undefined") {
+                let cvv = state.cvv.toString();
+                if(cvv.length !== 3){
+                    isValid = false;
+                    errors["cvv"] = "CVV must contain 3 numbers.";
+                }
+            }
 
             this.setState({
                 errors: errors
@@ -443,10 +297,10 @@ const SignUpForm = () => {
         }
 
         render() {
-            const { file, imagePreviewUrl, nom, prenom, description,
-                postal, adress, city, country,  phone,
-                cardNumber, expireDate, cvv, email, password, confPassword,
-                active, errors} = this.state;
+            const { imagePreviewUrl, nom, prenom, description,
+                postal, adress, city, country,  phone, password, confPassword,
+                cardNumber, expireDate, cvv, email,
+                active} = this.state;
             return (
                 <div>
                     {(active === 'edit')?(
@@ -486,10 +340,13 @@ const SignUpForm = () => {
                                     <td>
                                         <h2>Payment Details</h2>
                                         <CardNumber onChange={this.editCard} value={cardNumber}/>
+                                        <div className="user_text-danger">{this.state.errors.cardNumber}</div>
                                         <div className="user_row">
                                             <ExpireDate onChange={this.editExpireDate} value={expireDate}/>
                                             <CVV onChange={this.editCVV} value={cvv}/>
                                         </div>
+                                        <div className="user_text-danger">{this.state.errors.expireDate}</div>
+                                        <div className="user_text-danger">{this.state.errors.cvv}</div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -500,7 +357,8 @@ const SignUpForm = () => {
                                         <Password onChange={this.editPwd} value={password}/>
                                         <ConfPassword onChange={this.editConfPwd} value={confPassword}/>
                                         <div className="user_text-danger">{this.state.errors.confPassword}</div>
-
+                                        <AgreeToTerms onChange={this.editAgree}/>
+                                        <div className="user_text-danger">{this.state.errors.agree}</div>
                                     </td>
                                 </tr>
                             </table>
@@ -514,6 +372,7 @@ const SignUpForm = () => {
                             prenom={prenom}
                             description={description}
                             adress={adress}
+                            postal={postal}
                             city={city}
                             country={country}
                             phone={phone}
