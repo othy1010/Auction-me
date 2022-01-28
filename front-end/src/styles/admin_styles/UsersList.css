@@ -1,25 +1,23 @@
 .UsersList{
-    margin-top: 100px;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 85%;
 }
 
 .search-container form{
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
+    margin-left: 350px;
 }
 
 .search-container input{
-    width: 400px;
-    height: 35px;
+    width: 350px;
+    height: 12px;
     padding: 10px;
 }
 
 .search-container button{
     height: 35px;
-    width: 15%;
+    width: 80px;
     background-color: #f89b4d;
     border: none;
     cursor: pointer;
@@ -31,10 +29,16 @@
     padding: 5px;
     background-color: white;
     padding-left: 20px;
-    width: 500px;
+    width: 350px;
+    margin-right: 5px;
+    margin-bottom: 5px;
     border-radius: 3%;
-    margin-left: 100px;
     font-size: 17px;
+}
+
+.UserCard:hover{
+    background-color: rgba(176, 132, 255, 0.21);
+    transition-duration: 0.3s;
 }
 
 .UserCard img{
@@ -58,6 +62,10 @@
 .UserCard a:hover{
     text-decoration: underline;
 }
-.UsersList ul {
+.UsersList table {
     list-style-type: none;
+}
+
+.UsersList table td{
+    margin-left: 5px;
 }

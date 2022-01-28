@@ -1,0 +1,80 @@
+.auction-card2 {
+    position: relative;
+    color: #054231;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 8px;
+    text-align: left;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 15px 10px 20px 0px rgb(212, 206, 208);
+    width: 400px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+.auction-card2 a{
+    color: white;
+    text-decoration: none;
+}
+
+.auction-card2 a:hover{
+    text-decoration: underline;
+}
+.auction-card2 .auction-img {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: center;
+}
+.auction-card2 .auction-img img{
+    width: auto;
+    height: 100%;
+    position: relative;
+}
+.auction-card2 table{
+    text-align: left;
+}
+
+.auction-card2:hover {
+    left: 0;
+    color: white;
+    background-color: rgb(253, 128, 158);
+}
+
+.auction-card2:focus {
+    outline: none;
+  }
+
+
+.auctions-list .list{
+    margin-top: 30px;
+}
+
+.auctions-list form{
+    margin-top: 120px;
+    margin-left: 500px;
+}
+
+.auctions-list form input[type=text]{
+    width: 300px;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px solid silver
+}
+
+.auctions-list form input[type=submit]{
+    margin-left: 5px;
+    width: 100px;
+    border-radius: 15px;
+    border: none;
+    background: rgb(253, 128, 158);
+    height: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+
+

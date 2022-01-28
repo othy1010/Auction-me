@@ -3,9 +3,8 @@
     list-style-type: none;
     background-color: #A980F8;
     position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    width: 100%;
+    position: fixed;
+    width: 99%;
     padding: 10px 10px;
     font-size: 18px;
 }

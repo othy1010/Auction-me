@@ -15,13 +15,18 @@ const UsersList = () => {
             </form>
             </div>
             <br />
-            <ul>
-                <UserCard />
-                <br />
-                <UserCard />
-                <br />
-                <UserCard />
-            </ul>
+            <table>
+                <tr>
+                    <td><UserCard/></td>
+                    <td><UserCard/></td>
+                    <td><UserCard/></td>
+                </tr>
+                <tr>
+                    <td><UserCard/></td>
+                    <td><UserCard/></td>
+                    <td><UserCard/></td>
+                </tr>
+            </table>
         </div>
         </>
     );

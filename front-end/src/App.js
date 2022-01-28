@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 
 
 function App() {
-    const admin = true;   //change to true to see admin side
+    const admin = false;   //change to true to see admin side
     return (
         <Router>
             {/*Ici on insère le composant navbar*/}
