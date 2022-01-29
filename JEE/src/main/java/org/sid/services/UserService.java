@@ -18,9 +18,9 @@ public interface UserService {
 
    User updateUser(Long idU, User user);
 
-   User findBybidID(long bidId);
+   // User findBybidID(long bidId);
 
-   User findByItemId(long itemId);
+   // User findByItemId(long itemId);
 
    void deleteUser(Long idU);
 
