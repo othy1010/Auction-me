@@ -17,4 +17,10 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
 	List<User> findAllByIsConfirmed(Boolean isConfirmed);
 
+	List<User> findAllBylastName(String lastName);
+
+	List<User> findAllByFirstName(String firstName);
+
+	User findByEmail(String email);
+
 }

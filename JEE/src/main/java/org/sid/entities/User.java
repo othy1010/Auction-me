@@ -1,6 +1,5 @@
 package org.sid.entities;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,10 +24,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data  @AllArgsConstructor  @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userId ;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long userId;
 	@Column(length = 50)
 	private String username;
 	private String token;
@@ -36,7 +38,7 @@ public class User {
 	private String firstName;
 	@Column(length = 50)
 	private String secondName;
-	private int sexe ;
+	private int sexe;
 	@Column(length = 50)
 	private String country;
 	@Column(length = 50)
@@ -44,11 +46,11 @@ public class User {
 	@Column(length = 200)
 	private String address;
 	@Temporal(TemporalType.DATE)
-	private Date birthday ;
+	private Date birthday;
 	@Column(length = 50)
 	private String birthplace;
 	@Column(length = 10)
-	private int phone ;
+	private int phone;
 	@Column(length = 50)
 	private String email;
 	@Column(length = 50)
@@ -58,14 +60,18 @@ public class User {
 	@Column(length = 50)
 	private String paymentAccount;
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
-	@JoinColumn(name="bidId")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "bidId")
 	private List<Bid> bids = new ArrayList<Bid>();
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
-	@JoinColumn(name="paymentId")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "paymentId")
 	private List<Payment> payments = new ArrayList<Payment>();
-	/*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idG")
-	private Groupe groupe;*/
+	/*
+	 * @ManyToOne(fetch = FetchType.LAZY)
+	 * 
+	 * @JoinColumn(name = "idG")
+	 * private Groupe groupe;
+	 */
+
 }
