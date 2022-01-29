@@ -43,8 +43,9 @@ public class UserServiceImpl implements UserService {
 
    @Override
    public User saveUser(User user) {
-      // TODO Auto-generated method stub
-      return null;
+      user.setToken(new Token().nextString());
+
+      return userRepo.save(user);
    }
 
    @Override
@@ -53,49 +54,54 @@ public class UserServiceImpl implements UserService {
    }
 
    @Override
-   public User findByUserId(Long idU) {
-      // TODO Auto-generated method stub
-      return userRepo.findByEmail(email);;
+   public User findByUserId(Long userId) {
+      return userRepo.findByUserId(userId);
    }
 
    @Override
-   public List<User> findByFirstAndLastName(String firstName, String lastName) {
-      // TODO Auto-generated method stub
-      return userRepo.findByEmail(email);
+   public List<User> findByUsername(String username) {
+      return userRepo.findByUsername(username);
+
    }
 
    @Override
    public User findByToken(String token) {
-      // TODO Auto-generated method stub
-      return userRepo.findByEmail(email);
+      return userRepo.findByToken(token);
    }
 
    @Override
-   public User updateUser(Long idU, User user) {
-      // TODO Auto-generated method stub
-      return userRepo.findByEmail(email);
+   @PutMapping("users/userId/{userId}")
+   public User updateUser(@PathVariable Long userId, @RequestBody User user) {
+      User userUpdated = userRepo.findByUserId(userId);
+
+      userUpdated.setUsername(user.getUsername());
+      userUpdated.setFirstName(user.getFirstName());
+      userUpdated.setSecondName(user.getSecondName());
+      userUpdated.setSexe(user.getSexe());
+      userUpdated.setEmail(user.getEmail());
+      userUpdated.setPassword(user.getPassword());
+      userUpdated.setCountry(user.getCountry());
+      userUpdated.setCity(user.getCity());
+      userUpdated.setAddress(user.getAddress());
+      userUpdated.setPhone(user.getPhone());
+      userUpdated.setPaymentAccount(user.getPaymentAccount());
+      userRepo.save(userUpdated);
+      return userUpdated;
    }
 
-   @Override
-   public User findBybidID(long bidId) {
-      // TODO Auto-generated method stub
-      return null;
-   }
+   // @Override
+   // public User findBybidID(long bidId) {
+   // }
+
+   // @Override
+   // public User findByItemId(long itemId) {
+
+   // }
 
    @Override
-   public User findByItemId(long itemId) {
-      // TODO Auto-generated method stub
-      return null;
+   @DeleteMapping("users/userId/{userId}")
+   public void deleteUser(@PathVariable Long userId) {
+      userRepo.deleteById(userId);
    }
 
-   @Override
-   public void deleteUser(Long idU) {
-      // TODO Auto-generated method stub
-      
-   }
-
-  
-   @Override
-   @PostMapping("users")
- 
 }

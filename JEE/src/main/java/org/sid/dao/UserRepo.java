@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRepo extends JpaRepository<User, Long> {
 	List<User> findAll();
 
-	User findByIdU(Long idU);
+	User findByUserId(Long userId);
 
 	User findByCountry(String country);
 
@@ -17,9 +17,7 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
 	List<User> findAllByIsConfirmed(Boolean isConfirmed);
 
-	List<User> findAllBylastName(String lastName);
-
-	List<User> findAllByFirstName(String firstName);
+	List<User> findByUsername(String username);
 
 	User findByEmail(String email);
 

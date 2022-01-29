@@ -12,7 +12,7 @@ public interface UserService {
 
    User findByUserId(Long idU);
 
-   List<User> findByFirstAndLastName(String firstName, String lastName);
+   List<User> findByUsername(String username);
 
    User findByToken(String token);
 
