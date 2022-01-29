@@ -10,6 +10,7 @@ const Privacy = () => {
     return (
         <>
             <NavBar />
+            <br/>
             <PrivacyPolicy />
         </>
     );
