@@ -12,6 +12,7 @@ import Privacy from "./pages/Privacy";
 import UserDetails from './pages/Admin/UserDetails';
 import CategList from './pages/Admin/CategList';
 import AuctionsList from './pages/Admin/AuctionsList';
+import AuctionDetails from './pages/Admin/AuctionDetails';
 
 const AppAdmin = () => {
     return (
@@ -25,6 +26,7 @@ const AppAdmin = () => {
             <Route exact path='/categories' element={<CategList />} />
             <Route exact path='/auctions' element={<AuctionsList />} />
             <Route exact path='/privacy' element={<Privacy/>} />
+            <Route exact path='/auction-details' element={<AuctionDetails />} />
             <Route path="*" element={<NotFoundAdmin/>} />
 
         </Routes>

@@ -3,6 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 85%;
+    
 }
 
 .search-container form{
@@ -34,6 +35,7 @@
     margin-bottom: 5px;
     border-radius: 3%;
     font-size: 17px;
+    box-shadow: 15px 10px 20px 0px rgb(212, 206, 208);
 }
 
 .UserCard:hover{

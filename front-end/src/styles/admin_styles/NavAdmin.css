@@ -9,6 +9,7 @@
     width: 97.4%;
     padding: 10px 10px;
     font-size: 18px;
+    z-index: 1;
 }
 
 .navadmin .logo{

@@ -18,6 +18,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Privacy from "./pages/Privacy";
 
+
 const AppUser = () => {
     return (
         <Routes>
@@ -25,7 +26,7 @@ const AppUser = () => {
             <Route exact path="/sign-up" element={<SignUp/>} />
             <Route exact path='/' element={<Home />} />
             <Route exact path='/privacy' element={<Privacy/>} />
-
+            
 
             <Route exact path="/home" element={<HomeUser/>} />
             <Route exact path="/my-profil" element={<MyProfil/>} />
