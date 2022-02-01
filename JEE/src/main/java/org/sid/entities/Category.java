@@ -21,15 +21,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data  @AllArgsConstructor  @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Category {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long categoryId ;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long categoryId;
 	@Column(length = 50)
-	private String CategoryName ;
+	private String categoryName;
 	private Long superCategoryId;
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
-	@JoinColumn(name="itemId")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "itemId")
 	private List<Item> items = new ArrayList<Item>();
 }
