@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/logo.png'
 import '../../styles/admin_styles/NavAdmin.css'
 import {Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavAdmin = () => {
     return (
@@ -14,9 +15,9 @@ const NavAdmin = () => {
             </a>
         
         <div className="bar">
-          <a href="/AdminHome">Home</a>
-          <a href="/admin-profil">My profil</a>
-          <a href="/">Notification</a>
+          <NavLink exact to="/AdminHome" style={({ isActive }) => ({ color: isActive ? '#000': '#fff', fontWeight: isActive ? 'bold': 'none'})}> Home</NavLink>
+          <NavLink exact to="/admin-profil" style={({ isActive }) => ({ color: isActive ? '#000' : '#fff', fontWeight: isActive ? 'bold': 'none'})}>My profil</NavLink>
+          <NavLink exact to="/admin-notifications" style={({ isActive }) => ({ color: isActive ? '#000' : '#fff', fontWeight: isActive ? 'bold': 'none'})}>Notification</NavLink>
         </div>
         
           <div className="logout">
