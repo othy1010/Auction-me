@@ -39,6 +39,7 @@
 .navadmin .bar a:hover{
     background-color: rgba(0, 0, 0, 0.29);
 }
+
 .navadmin a[id='logo']:hover{
     background: none;
 }

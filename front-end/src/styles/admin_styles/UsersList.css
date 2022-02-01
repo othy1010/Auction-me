@@ -36,12 +36,15 @@
     border-radius: 3%;
     font-size: 17px;
     box-shadow: 15px 10px 20px 0px rgb(212, 206, 208);
+    cursor: pointer;
 }
 
 .UserCard:hover{
-    background-color: rgba(176, 132, 255, 0.21);
+    background-color: rgb(78, 76, 76);
     transition-duration: 0.3s;
+    color: white;
 }
+
 
 .UserCard img{
     width: 100px;

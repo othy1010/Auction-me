@@ -15,7 +15,7 @@ const NavAdmin = () => {
         
         <div className="bar">
           <a href="/AdminHome">Home</a>
-          <a href="/">My profil</a>
+          <a href="/admin-profil">My profil</a>
           <a href="/">Notification</a>
         </div>
         

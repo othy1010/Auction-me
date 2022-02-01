@@ -14,7 +14,7 @@ const UserCard = () => {
                 <br /><br />
                 <span>Admin :</span> No
                 <br /><br />
-                <span>Approved :</span> Yes
+                <span>Approved :</span> NO
                 </p>
             </div>
         </li>
