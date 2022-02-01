@@ -25,6 +25,7 @@
 .CategList input[type=submit]{
     width: 80px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .CategList .add-categ{
@@ -65,6 +66,11 @@
     margin-left: 20px;
 }
 
+.CategCard:hover{
+    background: rgb(78, 76, 76);
+    color: white;
+}
+
 .CategCard h3{
     margin-left: 150px;
     font-weight: none;
@@ -75,31 +81,34 @@
 }
 
 .CategCard button{
-    height: 20px;
+    height: 30px;
+    border-radius: 5px;
     margin-top: 20px;
     margin-right: 5px;
     cursor: pointer;
+    font-weight: bold;
 
 }
 
 .CategCard #edit{
     background: none;
-    color: black;
-    border: 1px solid silver;
+    color: #A980F8;
+    border: 2px solid #A980F8;
 }
 
 .CategCard #delete{
-    background: #F44336;
+    background: rgb(245, 57, 57);
     color: white;
-    border: none;
+    border: 2px solid rgb(245, 57, 57);
 }
 
 .CategCard #delete:hover{
-    background-color: #eb6e65;
+    background: none;
+    color: rgb(245, 57, 57);
 }
 
 .CategCard #edit:hover{
-    background-color: #2a97e0;
+    background-color: #A980F8;
     color: white;
 }
 

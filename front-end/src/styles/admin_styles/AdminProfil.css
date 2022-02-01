@@ -1,0 +1,12 @@
+.admin-profil {
+    margin-top: 30px;
+}
+.admin-profil h3 {
+    font-family: "Segoe UI Light", sans-serif;
+}
+
+.UsersToApprove table{
+    list-style: none;
+    margin-left: 50px;
+}
+

@@ -9,6 +9,7 @@
     width: 97.4%;
     padding: 10px 10px;
     font-size: 18px;
+    z-index: 1;
 }
 
 .navadmin .logo{
@@ -38,6 +39,7 @@
 .navadmin .bar a:hover{
     background-color: rgba(0, 0, 0, 0.29);
 }
+
 .navadmin a[id='logo']:hover{
     background: none;
 }
@@ -78,4 +80,8 @@
 .navadmin .bar{
     padding-top: 10px;
     margin-left: 60%;
+}
+
+.admin_selected:active{
+    color: black;
 }

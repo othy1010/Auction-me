@@ -16,7 +16,7 @@ const MenuAdmin = () => {
             </div>
             <div className="MenuElement" id="viewAuctions">
                 <img src={auction} alt="auction" />
-                <a href='/'>View auctions</a>
+                <a href='/auctions'>View auctions</a>
                 <p>From here you get a small previw for each auction.
                     You can also approve them.
                 </p>

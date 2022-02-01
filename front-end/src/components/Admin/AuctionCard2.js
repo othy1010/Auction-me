@@ -18,7 +18,7 @@ const AuctionCard2 = () => {
                             <td><b>Approved:</b></td><td>Not yet</td>
                         </tr>
                         <tr>
-                            <td><a href="/">See more</a></td>
+                            <td><a href="/auction-details">See more</a></td>
                         </tr>
                     </td>
                 </tr>
