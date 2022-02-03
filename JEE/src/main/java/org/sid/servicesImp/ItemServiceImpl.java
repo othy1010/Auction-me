@@ -40,17 +40,15 @@ public class ItemServiceImpl implements ItemService {
    @Autowired
    private ItemRepo itemRepo;
 
+   // public Item findByItemId(@PathVariable Long itemId) {
 
-   @GetMapping("item/itemId/{itemId}")
-   public Item findById(@PathVariable Long itemId) {
-      return itemRepo.findByItemId(itemId);
-   }
-   
-   @Override
-   @GetMapping("item/categoryId/{categoryId}")
-   public List<Item> findAllByCategoryId(@PathVariable Long categoryId) {
-      return itemRepo.findAllByCategoryId(categoryId);
-   }
+   // }
+
+   // @Override
+   // @GetMapping("item/categoryId/{categoryId}")
+   // public List<Item> findAllByCategoryId(@PathVariable Long categoryId) {
+   // return itemRepo.findAllByCategoryId(categoryId);
+   // }
 
    @Override
    @PostMapping("item")
@@ -58,16 +56,16 @@ public class ItemServiceImpl implements ItemService {
       return itemRepo.save(item);
    }
 
-
+   @Override
    public List<Item> findAllByCategoryId(long categoryId) {
       // TODO Auto-generated method stub
       return null;
    }
 
    @Override
-   public Item findByItemId(long itemId) {
-      // TODO Auto-generated method stub
-      return null;
+   @GetMapping("item/itemId/{itemId}")
+   public Item findByItemId(@PathVariable long itemId) {
+      return itemRepo.findByItemId(itemId);
    }
 
 }

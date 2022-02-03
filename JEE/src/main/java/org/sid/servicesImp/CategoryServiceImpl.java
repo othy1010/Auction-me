@@ -40,10 +40,9 @@ import org.util.SendEmail;
 @Transactional
 @RestController
 @RequestMapping("api/")
-public class CategoryServiceImpl implements CategoryService  {
+public class CategoryServiceImpl implements CategoryService {
    @Autowired
    private CategoryRepo categoryRepo;
-
 
    @Override
    @PostMapping("category")
@@ -52,11 +51,9 @@ public class CategoryServiceImpl implements CategoryService  {
    }
 
    @Override
-   public Category findCategoryByBid(Long bidId) {
-      // TODO Auto-generated method stub
-      return null;
+   @PostMapping("category/categoryId/{categoryId}")
+   public Category findCategoryByCategoryId(@PathVariable Long categoryId) {
+      return categoryRepo.findByCategoryId(categoryId);
    }
-
-
 
 }
