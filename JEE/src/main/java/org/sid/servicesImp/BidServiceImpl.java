@@ -27,17 +27,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.util.SendEmail;
 
-@CrossOrigin(origins ="http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000/")
 @Service
 @Transactional
 @RestController
 @RequestMapping("api/")
 public class BidServiceImpl implements BidService {
 	@Autowired
-	private BidRepo bidRepo ;
-	
+	private BidRepo bidRepo;
+
 	@GetMapping("bids")
-	public List<Bid> getBids(){
+	public List<Bid> getBids() {
 		return this.bidRepo.findAll();
 	}
 
@@ -59,5 +59,4 @@ public class BidServiceImpl implements BidService {
 		return bidRepo.findAllByUserId(userId);
 	}
 
-	
 }

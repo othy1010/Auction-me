@@ -39,6 +39,7 @@ public class PaymentServiceImpl implements PaymentService {
    @Autowired
    private PaymentRepo paymentRepo;
 
+   
    @GetMapping("payment")
    public List<Payment> getPayments() {
       return this.paymentRepo.findAll();

@@ -7,7 +7,7 @@ import org.sid.entities.Item;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ItemRepo {
+public interface ItemRepo extends JpaRepository<Item, Long>{
    Item findByItemId(Long itemId);
 
    List<Item> findAllByCategoryId(Long categoryId);

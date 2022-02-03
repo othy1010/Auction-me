@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.List;
 
 import org.sid.entities.Payment;
-import org.sid.entities.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
