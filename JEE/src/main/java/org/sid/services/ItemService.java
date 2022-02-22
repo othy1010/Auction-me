@@ -8,7 +8,7 @@ public interface ItemService {
 
    Item saveItem(Item item);
 
-   List<Item> findAllByCategoryId(long categoryId);
+   List<Item> findAllByCategoryId(Long categoryId);
 
-   Item findByItemId(long itemId);
+   Item findByItemId(Long itemId);
 }

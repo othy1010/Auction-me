@@ -6,6 +6,6 @@ public interface CategoryService {
 
    Category saveCategory(Category category);
 
-   Category findCategoryById(Long categoryId);
+   Category findCategoryByCategoryId(Long categoryId);
 
 }
