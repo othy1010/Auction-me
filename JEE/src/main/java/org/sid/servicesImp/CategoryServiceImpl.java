@@ -29,10 +29,11 @@ public class CategoryServiceImpl implements CategoryService {
       return categoryRepo.save(category);
    }
 
-   @Override
-   @PostMapping("category/categoryId/{categoryId}")
-   public Category findCategoryByCategoryId(@PathVariable Long categoryId) {
-      return categoryRepo.findByCategoryId(categoryId);
-   }
+	@Override
+	@PostMapping("category/categoryId/{categoryId}")
+	public Category findCategoryById(Long categoryId) {
+		// TODO Auto-generated method stub
+		return categoryRepo.findByCategoryId(categoryId);
+	}
 
 }

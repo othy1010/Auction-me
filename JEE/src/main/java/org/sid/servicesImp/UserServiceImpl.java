@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.util.SendEmail;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @Service
@@ -29,12 +31,22 @@ public class UserServiceImpl implements UserService {
    private UserRepo userRepo;
 
    @Override
-   @GetMapping("users")
+   @PostMapping("users")
    public User saveUser(@PathVariable User user) {
       user.setToken(new Token().nextString());
-
-      return userRepo.save(user);
+		User userN = userRepo.save(user);
+		String sub = "Creation du compte";
+		String html="<h1>Creation de votre compte</h1><p>Vous trouvez ci-joint les informations"
+				+ " necessaires pour vous connectez</p><ul><li>email : "+user.getEmail()+"</li><li>mot de passe : "
+				+user.getPassword()+"</li></ul>";
+		//SendEmail.sendMail(user.getEmail(),sub,html);
+		return  userN;
    }
+   
+   @GetMapping("users")
+	public List<User> getUsers(){
+		return this.userRepo.findAll();
+	}
 
    @Override
    @GetMapping("users/email/{email}")
