@@ -92,6 +92,12 @@ public class UserServiceImpl implements UserService {
       userRepo.save(userUpdated);
       return userUpdated;
    }
+   
+   @Override
+   @DeleteMapping("users/userId/{userId}")
+   public void deleteUser(@PathVariable Long userId) {
+      userRepo.deleteById(userId);
+   }
 
    // @Override
    // public User findBybidID(long bidId) {
@@ -102,10 +108,6 @@ public class UserServiceImpl implements UserService {
 
    // }
 
-   @Override
-   @DeleteMapping("users/userId/{userId}")
-   public void deleteUser(@PathVariable Long userId) {
-      userRepo.deleteById(userId);
-   }
+   
 
 }
