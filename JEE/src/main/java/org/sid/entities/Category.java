@@ -31,8 +31,5 @@ public class Category {
 	@Column(length = 50)
 	private String categoryName;
 	private Long superCategoryId;
-	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "itemId")
-	private List<Item> items = new ArrayList<Item>();
+
 }

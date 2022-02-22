@@ -10,5 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface BidRepo extends JpaRepository<Bid , Long> {
 	Bid findTopByItemIdOrderByPrice(Long itemId);
 	List<Bid> findAllByUserId(Long userId);
+	List<Bid> findAllByItemId(Long itemId);
 }
 

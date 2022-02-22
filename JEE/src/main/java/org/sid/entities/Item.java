@@ -32,10 +32,10 @@ public class Item {
 		private String itemName ;
 		private float initialPrice ;
 		private Long userId;
-		@Fetch(value = FetchMode.SUBSELECT)
+		/*@Fetch(value = FetchMode.SUBSELECT)
 		@OneToMany(cascade = CascadeType.ALL , fetch=FetchType.EAGER)
 		@JoinColumn(name="bidId")
-		private List<Bid> bids = new ArrayList<Bid>();
+		private List<Bid> bids = new ArrayList<Bid>();*/
 		private Long categoryId;
 		private Boolean isApprooved;
 		private String title ;

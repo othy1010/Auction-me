@@ -50,4 +50,10 @@ public class BidServiceImpl implements BidService {
 		return bidRepo.findAllByUserId(userId);
 	}
 
+	@Override
+	@GetMapping("bids/itemId/{itemId}")
+	public List<Bid> findAllByItemId(@PathVariable Long itemId) {
+		return bidRepo.findAllByItemId(itemId);
+	}
+
 }

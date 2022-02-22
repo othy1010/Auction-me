@@ -3,11 +3,12 @@ package org.sid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+import org.sid.dao.ItemRepo;
 import org.sid.dao.Token;
 import org.sid.entities.Payment;
 import org.sid.entities.Item;
 import org.sid.entities.User;
+import org.sid.servicesImp.ItemServiceImpl;
 import org.sid.servicesImp.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,10 +19,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Demo1Application implements CommandLineRunner {
 	@Autowired
 	private UserServiceImpl userServiceImpl ;
-	/*@Autowired
-	private GroupeRepo groupeRepo ;
 	@Autowired
-	private UserRepo userRepo ;
+	private ItemRepo itemRepo ;
+	@Autowired
+	private ItemServiceImpl itemServiceImpl;
+	/*private UserRepo userRepo ;
 	@Autowired
 		private PlanningRepo planningRepo ;*/
 
@@ -34,7 +36,8 @@ public class Demo1Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		userServiceImpl.saveUser(new User(null,"anass",new Token().nextString(),"Anass","EL JAZOULY",1,
 				"MAROC","CASA","AIN CHOK",new Date(2000/04/04),"TEMARA",0652052654,
-				"anass.eljazouly@gmail.com","1234",true,true,"bdfs4444",null,null));
+				"anass.eljazouly@gmail.com","1234",true,true,"bdfs4444",null,null,null));
+		itemServiceImpl.saveItem(new Item(null,"item1",(float)180.40,1L,1L,true,"MAROC","blablalblalalba" ));
 		/*userServiceImpl.saveUser(new User(null,new Token().nextString(),"AGENT","1",1,"MAROC","RABAT","HAY RIAD",new Date(1995/01/15),"CASA"
 				,"XXXX2",0652552675,"agent@gmail.com","1234","AGENT",null));
 		userServiceImpl.saveUser(new User(null,new Token().nextString(),"RESPO","1",1,"MAROC","SALE","XXXXX",new Date(1980/10/05),"FES"

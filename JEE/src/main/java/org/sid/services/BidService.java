@@ -12,4 +12,5 @@ public interface BidService {
 	Bid maxPriceOfItem(Long itemId);
 
 	List<Bid> findAllByUserId(Long userId);
+	List<Bid> findAllByItemId(Long itemId);
 }
