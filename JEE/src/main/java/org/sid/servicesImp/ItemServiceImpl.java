@@ -5,6 +5,7 @@ import java.util.*;
 
 import org.sid.dao.ItemRepo;
 import org.sid.entities.Item;
+import org.sid.entities.User;
 import org.sid.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,17 +32,36 @@ public class ItemServiceImpl implements ItemService {
    public Item saveItem(@RequestBody Item item) {
       return itemRepo.save(item);
    }
+   
+   @GetMapping("items")
+	public List<Item> getItems(){
+		return this.itemRepo.findAll();
+	}
+   
+   @Override
+   @GetMapping("items/userId/{userId}")
+   public List<Item> findAllByUserId(@PathVariable Long userId) {
+      return itemRepo.findAllByUserId(userId);
+   }
+
 
    @Override
-   @GetMapping("item/categoryId/{categoryId}")
+   @GetMapping("items/categoryId/{categoryId}")
    public List<Item> findAllByCategoryId(@PathVariable Long categoryId) {
       return itemRepo.findAllByCategoryId(categoryId);
    }
 
    @Override
-   @GetMapping("item/itemId/{itemId}")
+   @GetMapping("items/itemId/{itemId}")
    public Item findByItemId(@PathVariable Long itemId) {
       return itemRepo.findByItemId(itemId);
    }
+
+	@Override
+	@GetMapping("items/inItemName/{inItemName}")
+	public List<Item> findAllByItemNameLike(@PathVariable String inItemName) {
+		List<Item> items = itemRepo.findAllByItemNameLike(inItemName);
+		return items;
+	}
 
 }
