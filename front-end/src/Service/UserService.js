@@ -27,7 +27,7 @@ class UserService {
    updateUser(userId, user) {
       return axios.put(USERS_REST_API_URL + "/userId/" + userId, user);
    }
-   deleteUser(idU) {
+   deleteUser(userId) {
       return axios.delete(USERS_REST_API_URL + "/userId/" + userId);
    }
 
