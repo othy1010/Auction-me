@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import CategoryService from '../Service/categoryService.js'
 
 const Categories = () => {
-    const listCategories = [ "Games", "Electronic devices", "House",
-        "Drinks", "Decoration", "Slave",  "Something" ];
+    const [listCategories, setListCategories] = useState([])
+
+    useEffect(() => 
+    {
+    CategoryService.getCategories().then((res) => setListCategories(res.data))
+    }, []);
 
     const CreateCateg = () => {
         return (
-            <ul>
-                <li> <a href="\home"> {listCategories[0]}  </a> </li>
-                <li> <a href="\home"> {listCategories[1]}  </a> </li>
-                <li> <a href="\home"> {listCategories[2]}  </a> </li>
-                <li> <a href="\home"> {listCategories[3]}  </a> </li>
-                <li> <a href="\home"> {listCategories[4]}  </a> </li>
-                <li> <a href="\home"> {listCategories[5]}  </a> </li>
+            <ul>{listCategories.map((category) => (
+                <li> <a href="\all-auctions"> {category.categoryName}</a> </li>
+            ))}
             </ul>
         )
     }
