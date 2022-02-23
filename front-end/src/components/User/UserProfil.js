@@ -97,22 +97,6 @@ const UserProfil = () => {
             super(props);
             this.state = {
                 user: "",
-
-                /*firstName: "",
-                secondName: "",
-                sexe: "",
-                country: "",
-                city: "",
-                address: "",
-                birthday: "",
-                birthplace: "",
-                cin: "",
-                phone: "",
-                email: "",
-                password: "",
-                profil: "",
-                idG: "",*/
-
             };
         }
         // state = {
@@ -143,15 +127,13 @@ const UserProfil = () => {
 
         render() {
 
-            const { imagePreviewUrl, user, prenom, description,
-                postal, adress, city, country, phone,
-                cardNumber, expireDate, cvv, email } = this.state;
+            const { user } = this.state;
 
             return (
                 <div>
                     <Profile
                         onSubmit={this.handleSubmit}
-                        src={imagePreviewUrl}
+                        src={"imagePreviewUrl"}
                         nom={user.firstName}
                         prenom={user.lastName}
                         description={"description"}
