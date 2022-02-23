@@ -36,7 +36,10 @@ public class ReactController {
         User userSearch = userService.findByEmail(user.getEmail());
         if(userSearch !=null)
         {
-            return"HomeUser";
+            if(userSearch.getIsAdmin())
+                return "AdminHome" ;
+            else
+                return"HomeUser";
         }
         else{
             System.out.println("Erreur d'authentification.");
@@ -49,9 +52,9 @@ public class ReactController {
     {
         User user= new User();
         model.addAttribute("user", user);
-        return "signIn";
+        return "sign-up";
     }
-    @PostMapping(value = "/signIn")
+    @PostMapping(value = "/sign-up")
     public String submitForm(Model model, @ModelAttribute("user") User user) {
         User checkExist = userService.findByEmail(user.getEmail());
         if(checkExist == null) {
