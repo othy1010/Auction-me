@@ -25,7 +25,7 @@ class AuctionCard extends React.Component {
             <div>
                 <Link to={{
                     pathname: "/auction-info",
-                    state: this.props
+                    state: { item: this.props.item }
                 }}>
                     <button className="auctionCard">
                         <table>

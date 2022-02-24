@@ -4,7 +4,7 @@ const ITEMS_REST_API_URL = "http://localhost:8080/api/items";
 
 
 class ItemService {
-   
+
    getItems() {
       return axios.get(ITEMS_REST_API_URL);
    }
@@ -21,6 +21,11 @@ class ItemService {
    getItemByItemId(itemId) {
       return axios.get(ITEMS_REST_API_URL + "/itemId/" + itemId);
    }
+
+   getBidedItemByItemId(userId) {
+      return axios.get(ITEMS_REST_API_URL + "/userIdWithBid/" + userId);
+   }
+
 }
 
 export default new ItemService();
