@@ -21,22 +21,22 @@ class UsersInGroupe extends Component {
   }
 
   deleteUserFromGroupe(User) {
-    console.log(this.state.idG, User);
+    //console.log(this.state.idG, User);
     UserService.deleteUserFromGroupe(this.state.idG, User).then((resp) => {
-      console.log(resp);
+      //console.log(resp);
       this.componentDidMount();
       UserService.getUserByIdU(UserInfos.userInfos.idU).then((response2) => {
         UserInfos.userInfos = response2.data;
         localStorage.setItem("userInfos", JSON.stringify(UserInfos.userInfos));
       });
     });
-    console.log("Suppression avec succés");
+    //console.log("Suppression avec succés");
     toast.success("Retire avec succés");
   }
 
   addUserToGroupe(User) {
     UserService.addUserToGroupe(this.state.idG, User).then((resp) => {
-      console.log(resp);
+      //console.log(resp);
       this.componentDidMount();
       UserService.getUserByIdU(UserInfos.userInfos.idU).then((response2) => {
         UserInfos.userInfos = response2.data;
@@ -61,15 +61,15 @@ class UsersInGroupe extends Component {
     UserService.getUsersNotInGroupe(this.state.idG).then((response) => {
       var groupe = [];
       response.data.map((user) => {
-          if (user.idG == null) {
-            groupe.push({ idU: user.idU, name: "-" });
+        if (user.idG == null) {
+          groupe.push({ idU: user.idU, name: "-" });
+          this.setState({ groupeName2: groupe });
+        } else {
+          UserService.getGroupeByIdG(user.idG).then((resp) => {
+            groupe.push({ idU: user.idU, name: resp.data.groupeName });
             this.setState({ groupeName2: groupe });
-          } else {
-            UserService.getGroupeByIdG(user.idG).then((resp) => {
-              groupe.push({ idU: user.idU, name: resp.data.groupeName });
-              this.setState({ groupeName2: groupe });
-            });
-          }
+          });
+        }
       });
       this.setState({
         usersNotInGroupe: response.data,

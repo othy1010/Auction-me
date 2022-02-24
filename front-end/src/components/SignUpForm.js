@@ -1,47 +1,49 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/user_styles/signup.scss"
-import { ImgUpload, Nom, Prenom, Description, Phone,
+import {
+    ImgUpload, Nom, Prenom, Description, Phone,
     Adress, Postal, City, Country, CardNumber, ExpireDate,
-    CVV, Email, Password, ConfPassword } from "./User/UserDef"
+    CVV, Email, Password, ConfPassword
+} from "./User/UserDef"
 
 const SignUpForm = () => {
-    const AgreeToTerms =({ onChange, value}) =>
+    const AgreeToTerms = ({ onChange, value }) =>
         <div className="user_field">
             <label htmlFor="terms">
-            <input id="terms" onChange={onChange} type="checkbox" value={value} required/>
+                <input id="terms" onChange={onChange} type="checkbox" value={value} required />
                 I read the privacy policy and I agree to the use terms.
             </label>
         </div>
 
     function createAcc(src, nom, prenom, description, adress, postal,
-                   city, country, phone, cardNumber, expireDate, cvv,
-                   email, password){
-            const profil= {
-                "src":src,
-                "nom": nom,
-                "prenom": prenom,
-                "description":description,
-                "adress": adress,
-                "postal":postal,
-                "city":city,
-                "country":country,
-                "phone":phone,
-                "cardNumber":cardNumber,
-                "expireDate": expireDate,
-                "cvv": cvv,
-                "email": email,
-                "password": password
-            };
+        city, country, phone, cardNumber, expireDate, cvv,
+        email, password) {
+        const profil = {
+            "src": src,
+            "nom": nom,
+            "prenom": prenom,
+            "description": description,
+            "adress": adress,
+            "postal": postal,
+            "city": city,
+            "country": country,
+            "phone": phone,
+            "cardNumber": cardNumber,
+            "expireDate": expireDate,
+            "cvv": cvv,
+            "email": email,
+            "password": password
+        };
         localStorage.setItem("profil", profil);
         alert("Your account will be shortly created.");
     }
 
 
-    const Profile =({ onSubmit, src,
-                        nom, prenom, description, adress, postal, city, country, phone, cardNumber, expireDate, cvv,
-                        email, password,
-                    })=>
+    const Profile = ({ onSubmit, src,
+        nom, prenom, description, adress, postal, city, country, phone, cardNumber, expireDate, cvv,
+        email, password,
+    }) =>
         <div className="user_form">
             <form onSubmit={onSubmit}>
                 <h1>Your Profil - Preview</h1>
@@ -49,7 +51,7 @@ const SignUpForm = () => {
                     <tr>
                         <td>
                             <div className="user_img-wrap">
-                                <img src={src} alt=""/>
+                                <img src={src} alt="" />
                             </div>
                         </td>
                         <td>
@@ -93,12 +95,12 @@ const SignUpForm = () => {
                             </tr>
                             <tr>
                                 <td><b>Country:</b></td> <
-                                td><div className="user_country">{country}</div></td>
+                                    td><div className="user_country">{country}</div></td>
                             </tr>
                         </td>
                     </tr>
                     <tr>
-                        <td/>
+                        <td />
                         <td>
                             <tr>
                                 <td colSpan={2}><h2>Payment Details</h2></td>
@@ -116,32 +118,32 @@ const SignUpForm = () => {
                                 <td><div className="user_cvv">{cvv}</div></td>
                             </tr>
                         </td>
-                        <td/>
+                        <td />
                     </tr>
 
                 </table>
-               <div className="user_buttons">
+                <div className="user_buttons">
                     <button type="submit" className="user_edit">Edit Profile </button>
-                   <Link to="/login">
-                       <button type="button" className="user_confirm"
-                               onClick={createAcc({src}, {nom}, {prenom}, {description}, {adress},
-                               {postal}, {city}, {country}, {phone}, {cardNumber}, {expireDate}, {cvv},
-                               {email}, {password})}>Create my account</button>
-                   </Link>
+                    <Link to="/login">
+                        <button type="button" className="user_confirm"
+                            onClick={createAcc({ src }, { nom }, { prenom }, { description }, { adress },
+                                { postal }, { city }, { country }, { phone }, { cardNumber }, { expireDate }, { cvv },
+                                { email }, { password })}>Create my account</button>
+                    </Link>
 
                 </div>
             </form>
         </div>
 
 
-    const Edit =({ onSubmit,  children, })=>
+    const Edit = ({ onSubmit, children, }) =>
         <div className="user_form">
             <h1>Sign up Form</h1>
             <form onSubmit={onSubmit}>
                 {children}
                 <div className="user_row">
                     <button type="submit" id="submitBtn"
-                            className="user_save">Save</button>
+                        className="user_save">Save</button>
                     <Link to="/login">
                         <button type="cancel" className="user_cancel">Cancel</button>
                     </Link>
@@ -153,13 +155,13 @@ const SignUpForm = () => {
         state = {
             file: '',
             imagePreviewUrl: '/images/profile.jpg',
-            nom:'', prenom:'', description:'-', postal:'', adress:'', city:'', country:'',  phone:'',
-            cardNumber:'', expireDate:'', cvv:'', email:'', password:'', confPassword:'',
-            active: 'edit', agree:'false',
-            errors:{}
+            nom: '', prenom: '', description: '-', postal: '', adress: '', city: '', country: '', phone: '',
+            cardNumber: '', expireDate: '', cvv: '', email: '', password: '', confPassword: '',
+            active: 'edit', agree: 'false',
+            errors: {}
         }
 
-        photoUpload = e =>{
+        photoUpload = e => {
             e.preventDefault();
             const reader = new FileReader();
             const file = e.target.files[0];
@@ -171,77 +173,77 @@ const SignUpForm = () => {
             }
             reader.readAsDataURL(file);
         }
-        editNom = e =>{
+        editNom = e => {
             const nom = e.target.value;
             this.setState({ nom, });
         }
-        editPrenom = e =>{
+        editPrenom = e => {
             const prenom = e.target.value;
             this.setState({ prenom, });
         }
-        editDesc = e =>{
+        editDesc = e => {
             const desc = e.target.value;
             this.setState({ desc, });
         }
-        editPostal = e =>{
+        editPostal = e => {
             const postal = e.target.value;
             this.setState({ postal, });
         }
-        editAdress = e =>{
+        editAdress = e => {
             const adress = e.target.value;
             this.setState({ adress, });
         }
-        editCity = e =>{
+        editCity = e => {
             const city = e.target.value;
             this.setState({ city, });
         }
-        editCountry = e =>{
+        editCountry = e => {
             const country = e.target.value;
             this.setState({ country, });
         }
-        editPhone = e =>{
+        editPhone = e => {
             const phone = e.target.value;
             this.setState({ phone, });
         }
-        editEmail = e =>{
+        editEmail = e => {
             const email = e.target.value;
             this.setState({ email, });
         }
-        editPwd = e =>{
+        editPwd = e => {
             const password = e.target.value;
             this.setState({ password, });
         }
-        editConfPwd = e =>{
+        editConfPwd = e => {
             const confPassword = e.target.value;
             this.setState({ confPassword, });
         }
-        editCard = e =>{
+        editCard = e => {
             const cardNumber = e.target.value;
             this.setState({ cardNumber, });
         }
-        editExpireDate = e =>{
+        editExpireDate = e => {
             const expireDate = e.target.value;
             this.setState({ expireDate, });
         }
-        editCVV = e =>{
+        editCVV = e => {
             const cvv = e.target.value;
             this.setState({ cvv, });
         }
-        editAgree = e =>{
+        editAgree = e => {
             const agree = e.target.checked;
             this.setState({ agree, });
         }
 
-        handleSubmit= e =>{
+        handleSubmit = e => {
             e.preventDefault();
-            if(this.validate()) {
-                let activeP = (this.state.active === 'edit' )? 'profile' : 'edit';
-                console.log(this.state);
+            if (this.validate()) {
+                let activeP = (this.state.active === 'edit') ? 'profile' : 'edit';
+                //console.log(this.state);
                 this.setState({
                     active: activeP,
                 })
             }
-            console.log(this.state.errors);
+            //console.log(this.state.errors);
         }
         validate() {
             let state = this.state;
@@ -261,29 +263,28 @@ const SignUpForm = () => {
                     errors["confPassword"] = "The two passwords don't match.";
                 }
             }
-            if( state.agree !== true){
+            if (state.agree !== true) {
                 isValid = false;
                 errors["agree"] = "You must agree to the use terms first.";
             }
-            if(typeof state.expireDate !== "undefined")
-            {
+            if (typeof state.expireDate !== "undefined") {
                 let expire = new Date(state.expireDate);
                 let now = Date.now();
-                if(expire - now <= 0){
+                if (expire - now <= 0) {
                     errors["expireDate"] = "Unvalid card expire date.";
                     isValid = false;
                 }
             }
             if (typeof state.cardNumber !== "undefined") {
                 let cardN = state.cardNumber.toString();
-                if(cardN.length< 8 || cardN.length > 19){
+                if (cardN.length < 8 || cardN.length > 19) {
                     isValid = false;
                     errors["cardNumber"] = "The card number must contain 8 to 19 numbers.";
                 }
             }
             if (typeof state.cvv !== "undefined") {
                 let cvv = state.cvv.toString();
-                if(cvv.length !== 3){
+                if (cvv.length !== 3) {
                     isValid = false;
                     errors["cvv"] = "CVV must contain 3 numbers.";
                 }
@@ -298,90 +299,90 @@ const SignUpForm = () => {
 
         render() {
             const { imagePreviewUrl, nom, prenom, description,
-                postal, adress, city, country,  phone, password, confPassword,
+                postal, adress, city, country, phone, password, confPassword,
                 cardNumber, expireDate, cvv, email,
-                active} = this.state;
+                active } = this.state;
             return (
                 <div>
-                    {(active === 'edit')?(
+                    {(active === 'edit') ? (
                         <Edit onSubmit={this.handleSubmit}>
                             <table>
                                 <tr>
                                     <td>
-                                        <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl}/>
+                                        <ImgUpload onChange={this.photoUpload} src={imagePreviewUrl} />
                                     </td>
                                     <td>
                                         <h2>General Information</h2>
                                         <div className="user_row">
-                                            <Nom onChange={this.editNom} value={nom}/>
-                                            <Prenom onChange={this.editPrenom} value={prenom}/>
+                                            <Nom onChange={this.editNom} value={nom} />
+                                            <Prenom onChange={this.editPrenom} value={prenom} />
                                         </div>
-                                        <Description onChange={this.editDesc} value={description}/>
+                                        <Description onChange={this.editDesc} value={description} />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td/>
+                                    <td />
                                     <td>
                                         <h2>Personal Information</h2>
-                                        <Adress onChange={this.editAdress} value={adress}/>
+                                        <Adress onChange={this.editAdress} value={adress} />
                                         <div className="user_row">
-                                            <City onChange={this.editCity} value={city}/>
-                                            <Country onChange={this.editCountry} value={country}/>
+                                            <City onChange={this.editCity} value={city} />
+                                            <Country onChange={this.editCountry} value={country} />
                                         </div>
-                                       <div className="user_row">
-                                            <Postal onChange={this.editPostal} value={postal}/>
-                                            <Phone onChange={this.editPhone} value={phone}/>
+                                        <div className="user_row">
+                                            <Postal onChange={this.editPostal} value={postal} />
+                                            <Phone onChange={this.editPhone} value={phone} />
                                         </div>
                                         <div className="user_text-danger">{this.state.errors.phone}</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td/>
+                                    <td />
                                     <td>
                                         <h2>Payment Details</h2>
-                                        <CardNumber onChange={this.editCard} value={cardNumber}/>
+                                        <CardNumber onChange={this.editCard} value={cardNumber} />
                                         <div className="user_text-danger">{this.state.errors.cardNumber}</div>
                                         <div className="user_row">
-                                            <ExpireDate onChange={this.editExpireDate} value={expireDate}/>
-                                            <CVV onChange={this.editCVV} value={cvv}/>
+                                            <ExpireDate onChange={this.editExpireDate} value={expireDate} />
+                                            <CVV onChange={this.editCVV} value={cvv} />
                                         </div>
                                         <div className="user_text-danger">{this.state.errors.expireDate}</div>
                                         <div className="user_text-danger">{this.state.errors.cvv}</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td/>
+                                    <td />
                                     <td>
                                         <h2>Account Credentials</h2>
-                                        <Email onChange={this.editEmail} value={email}/>
-                                        <Password onChange={this.editPwd} value={password}/>
-                                        <ConfPassword onChange={this.editConfPwd} value={confPassword}/>
+                                        <Email onChange={this.editEmail} value={email} />
+                                        <Password onChange={this.editPwd} value={password} />
+                                        <ConfPassword onChange={this.editConfPwd} value={confPassword} />
                                         <div className="user_text-danger">{this.state.errors.confPassword}</div>
-                                        <AgreeToTerms onChange={this.editAgree}/>
+                                        <AgreeToTerms onChange={this.editAgree} />
                                         <div className="user_text-danger">{this.state.errors.agree}</div>
                                     </td>
                                 </tr>
                             </table>
                         </Edit>
-                    ):
+                    ) :
                         (
-                        <Profile
-                            onSubmit={this.handleSubmit}
-                            src={imagePreviewUrl}
-                            nom={nom}
-                            prenom={prenom}
-                            description={description}
-                            adress={adress}
-                            postal={postal}
-                            city={city}
-                            country={country}
-                            phone={phone}
-                            cardNumber={cardNumber}
-                            expireDate={expireDate}
-                            cvv={cvv}
-                            email={email}
-                            password={password}
-                        />)}
+                            <Profile
+                                onSubmit={this.handleSubmit}
+                                src={imagePreviewUrl}
+                                nom={nom}
+                                prenom={prenom}
+                                description={description}
+                                adress={adress}
+                                postal={postal}
+                                city={city}
+                                country={country}
+                                phone={phone}
+                                cardNumber={cardNumber}
+                                expireDate={expireDate}
+                                cvv={cvv}
+                                email={email}
+                                password={password}
+                            />)}
 
                 </div>
             )
@@ -390,8 +391,8 @@ const SignUpForm = () => {
 
     return (
         <div>
-            <div className="user_top"/>
-            <CardProfile/>
+            <div className="user_top" />
+            <CardProfile />
         </div>
 
     );

@@ -38,7 +38,7 @@ class MyPlanning extends Component {
   componentDidMount() {
     if (this.state.idG != null) {
       UserService.getGroupeByIdG(this.state.idG).then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({
           plannings: response.data.plannings,
         });
@@ -48,18 +48,18 @@ class MyPlanning extends Component {
           let dateS = new Date(planning.startDate);
           let dateE = new Date(planning.endDate);
           date.push(format(dateS, "yyyy-MM-dd"));
-          console.log(dateS);
-          console.log(dateE);
-          console.log(dateS < dateE);
+          //console.log(dateS);
+          //console.log(dateE);
+          //console.log(dateS < dateE);
           while (dateS < dateE) {
             dateS.setDate(dateS.getDate() + 1);
             date.push(format(dateS, "yyyy-MM-dd"));
-            console.log(dateS);
+            //console.log(dateS);
           }
           this.setState({
             dates: date,
           });
-          console.log(this.state.dates);
+          //console.log(this.state.dates);
         });
         this.setState({
           dates: date,
@@ -82,8 +82,8 @@ class MyPlanning extends Component {
       return (
         <div className="container main-component">
           <DatePicker
-            onChange={(dates) => console.log("dates", dates)}
-            selectedDays={this.state.dates} //initial selected days
+            onChange={(dates) => //console.log("dates", dates)}
+              selectedDays = { this.state.dates } //initial selected days
             jalali={false}
             numberOfMonths={3}
             numberOfSelectableDays={1000} // number of days you need

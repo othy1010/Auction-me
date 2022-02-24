@@ -23,7 +23,7 @@ class NewPassword extends Component {
   sendRequest = (e) => {
     e.preventDefault();
     var html = "<div class='alert alert-danger'>";
-    console.log(this.state.token);
+    //console.log(this.state.token);
     UserService.getUserByToken(this.state.token).then((response) => {
       if (response.data == "") {
         html += "<li>Demande refusée, le lien est non acceptable</li>";
@@ -35,7 +35,7 @@ class NewPassword extends Component {
           html += "<li>Les deux champs ne sont pas identiques</li>";
           html += "</div>";
           document.getElementById("errors").innerHTML = html;
-        toast.error("ERREUR");
+          toast.error("ERREUR");
 
         } else {
           let user = {
@@ -55,9 +55,9 @@ class NewPassword extends Component {
             password: this.state.password,
             profil: response.data.profil,
           };
-          console.log(user);
+          //console.log(user);
           UserService.updateUser(response.data.idU, user).then((res) => {
-            console.log(res.data);
+            //console.log(res.data);
 
             UserInfos.userInfos = user;
             localStorage.setItem(

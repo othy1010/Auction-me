@@ -36,7 +36,7 @@ class GroupeComponent extends Component {
       UserInfos.userInfos = response2.data;
       localStorage.setItem("userInfos", JSON.stringify(UserInfos.userInfos));
     });
-    console.log("Suppression avec succés");
+    //console.log("Suppression avec succés");
     toast.success("Suppression avec succés");
   }
 

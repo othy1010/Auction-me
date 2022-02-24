@@ -10,11 +10,11 @@ import NavAgent from "./components/NavAgent";
 import { Toaster } from "react-hot-toast";
 
 function nav() {
-  console.log(UserInfos.userInfos);
+  //console.log(UserInfos.userInfos);
   if (UserInfos.userInfos == null || UserInfos.userInfos.length == 0) {
     return <NavHome />;
   } else {
-    console.log(UserInfos.userInfos);
+    //console.log(UserInfos.userInfos);
 
     if (UserInfos.userInfos.profil == "ADMIN") {
       return <NavAdmin />;

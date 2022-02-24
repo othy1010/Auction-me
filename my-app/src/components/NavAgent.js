@@ -17,7 +17,7 @@ import Notifications from "./Notifications";
 class NavAgent extends Component {
   deconnected() {
     localStorage.clear();
-    console.log("deconnected");
+    //console.log("deconnected");
     UserInfos.userInfos = [];
     ReactDOM.render(
       <React.StrictMode>

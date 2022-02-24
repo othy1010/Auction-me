@@ -17,8 +17,8 @@ const MySubscribedAuctions = () => {
     //         listItems.push(itemService.getItemByItemId(Bid.itemId))
 
     //     ));
-    //     console.log("listItems");
-    //     console.log(listItems);
+    //     //console.log("listItems");
+    //     //console.log(listItems);
     //     //TODO userid
 
 
@@ -26,7 +26,7 @@ const MySubscribedAuctions = () => {
 
 
 
-    // console.log(listItems)
+    // //console.log(listItems)
     return (
         <div className="user_card">
             <h3>Auctions i'm participating in</h3>

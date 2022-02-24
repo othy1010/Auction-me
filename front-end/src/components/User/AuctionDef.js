@@ -1,14 +1,14 @@
 import React from "react";
 
-export const ImgUpload =({ onChange, src })=>
+export const ImgUpload = ({ onChange, src }) =>
     <label htmlFor="photo-upload" className="user_custom-file-upload user_fas">
         <div className="user_img-wrap user_img-upload" >
-            <img id="photo-upload" src={src} alt=""/>
+            <img id="photo-upload" src={src} alt="" />
         </div>
-        <input id="photo-upload" type="file" onChange={onChange}/>
+        <input id="photo-upload" type="file" onChange={onChange} />
     </label>
 
-export const Title =({ onChange, value })=>
+export const Title = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="title">
             Title:
@@ -20,9 +20,9 @@ export const Title =({ onChange, value })=>
             maxLength={25}
             value={value}
             placeholder="Amazing Product"
-            required/>
+            required />
     </div>
-export const Name =({ onChange, value })=>
+export const Name = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="name">
             Product's Name:
@@ -34,9 +34,9 @@ export const Name =({ onChange, value })=>
             maxLength={25}
             value={value}
             placeholder="Product x"
-            required/>
+            required />
     </div>
-export const Description =({ onChange, value })=>
+export const Description = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="desc">
             Description:
@@ -50,7 +50,7 @@ export const Description =({ onChange, value })=>
         />
     </div>
 
-export const Price =({ onChange, value })=>
+export const Price = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="price">
             Starting price:
@@ -62,17 +62,17 @@ export const Price =({ onChange, value })=>
             value={value}
         />
     </div>
-export const Currency =()=> {
+export const Currency = () => {
     class _Currency extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
                 currencies: [
-                    {name: 'Choose a currency', id: 0},
-                    {name: 'Dollar', id: 1},
-                    {name: 'Euro', id: 2},
-                    {name: 'Yen', id: 3},
-                    {name: 'MAD', id: 4},
+                    { name: 'Choose a currency', id: 0 },
+                    { name: 'Dollar', id: 1 },
+                    { name: 'Euro', id: 2 },
+                    { name: 'Yen', id: 3 },
+                    { name: 'MAD', id: 4 },
                 ]
             };
             this.handleChange = this.handleChange.bind(this);
@@ -80,11 +80,11 @@ export const Currency =()=> {
 
         handleChange = (e) => {
             let idx = e.target.selectedIndex;
-            console.log("changed currency to :"+e.target.value);
+            //console.log("changed currency to :"+e.target.value);
         }
 
         render() {
-            let {currencies} = this.state;
+            let { currencies } = this.state;
             let currencyList = currencies.length > 0
                 && currencies.map((item, i) => {
                     return (
@@ -107,12 +107,12 @@ export const Currency =()=> {
     }
 
     return (
-        <_Currency/>
+        <_Currency />
     )
 };
 
 
-export const Brand =({ onChange, value })=>
+export const Brand = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="marque">
             Brand:
@@ -125,7 +125,7 @@ export const Brand =({ onChange, value })=>
             placeholder="Samsung"
         />
     </div>
-export const Stat =({ onChange, value })=>
+export const Stat = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="state">
             State of product:
@@ -140,7 +140,7 @@ export const Stat =({ onChange, value })=>
         />
     </div>
 
-export const Country =({ onChange, value })=>
+export const Country = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="country">
             Country:
@@ -153,7 +153,7 @@ export const Country =({ onChange, value })=>
             required
         />
     </div>
-export const City =({ onChange, value })=>
+export const City = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="city">
             City:
@@ -167,10 +167,10 @@ export const City =({ onChange, value })=>
         />
     </div>
 
-export const PeriodStart =({ onChange, value })=>
+export const PeriodStart = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="period_from">
-           Auction from:
+            Auction from:
         </label>
         <input
             id="period_from"
@@ -181,7 +181,7 @@ export const PeriodStart =({ onChange, value })=>
             placeholder="Start date"
         />
     </div>
-export const PeriodEnd =({ onChange, value })=>
+export const PeriodEnd = ({ onChange, value }) =>
     <div className="user_field">
         <label htmlFor="period_to">
             Auction to:
@@ -196,7 +196,7 @@ export const PeriodEnd =({ onChange, value })=>
         />
     </div>
 
-export const OwnerProfil =({ nom, prenom, email, phone, description, country })=>
+export const OwnerProfil = ({ nom, prenom, email, phone, description, country }) =>
     <div className="user_field">
         <table className="user_owner">
             <tr>
@@ -212,9 +212,9 @@ export const OwnerProfil =({ nom, prenom, email, phone, description, country })=
                     <tr>
                         <td><b>Email:</b></td> <td>{email}</td>
                     </tr>
-                   <tr>
-                       <td><b>Country:</b></td> <td>{country}</td>
-                   </tr>
+                    <tr>
+                        <td><b>Country:</b></td> <td>{country}</td>
+                    </tr>
                 </td>
             </tr>
             <tr>

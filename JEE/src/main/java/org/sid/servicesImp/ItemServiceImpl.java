@@ -3,7 +3,9 @@ package org.sid.servicesImp;
 
 import java.util.*;
 
+import org.sid.dao.BidRepo;
 import org.sid.dao.ItemRepo;
+import org.sid.entities.Bid;
 import org.sid.entities.Item;
 import org.sid.entities.User;
 import org.sid.services.ItemService;
@@ -28,6 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemServiceImpl implements ItemService {
    @Autowired
    private ItemRepo itemRepo;
+   @Autowired
+   private BidRepo bidRepo;
 
    @Override
    @PostMapping("items")
@@ -63,6 +67,17 @@ public class ItemServiceImpl implements ItemService {
 	@GetMapping("items/inItemName/{inItemName}")
 	public List<Item> findAllByItemNameLike(@PathVariable String inItemName) {
 		List<Item> items = itemRepo.findAllByItemNameLike(inItemName);
+		return items;
+	}
+
+	@Override
+	@GetMapping("items/userIdWithBid/{userId}")
+	public List<Item> findAllByUserIdAndBidId(@PathVariable Long userId) {
+		List<Bid> bids = bidRepo.findAllByUserId(userId);
+		List<Item> items=new ArrayList<>();
+		for(Bid bid : bids){
+			items.add(itemRepo.findByItemId(bid.getItemId()));
+		}
 		return items;
 	}
 	

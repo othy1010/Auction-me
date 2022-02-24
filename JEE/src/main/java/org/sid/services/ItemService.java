@@ -4,7 +4,8 @@ import java.util.List;
 
 
 import org.sid.entities.Item;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 public interface ItemService {
@@ -17,8 +18,11 @@ public interface ItemService {
 
    Item findByItemId(Long itemId);
    List<Item> findAllByItemNameLike(String inItemName);
-   
-   Item updateItem( Long itemId,  Item item);
+
+
+    List<Item> findAllByUserIdAndBidId(Long userId);
+
+    Item updateItem(Long itemId, Item item);
    void deleteUser( Long itemId);
    
    

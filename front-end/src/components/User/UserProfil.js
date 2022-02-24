@@ -99,19 +99,11 @@ const UserProfil = () => {
                 user: "",
             };
         }
-        // state = {
-        //     imagePreviewUrl: '/images/profile.jpg',
-        //     nom:'Alexus', prenom:'Alex', description:'-',
-        //     postal:'12000', adress:'XXXX', city:'X City', country:'XX',
-        //     phone:'212123456789', cardNumber:'1234 5678 1234',
-        //     expireDate:'12/12/12', cvv:'123', email:'alex@gmail.com'
-        // }
-
         componentDidMount() {
             UserService.getUsers(1).then((response) => {
 
 
-                console.log(response.data);
+                //console.log(response.data);
 
                 this.setState({
                     user: response.data.filter(
@@ -119,7 +111,7 @@ const UserProfil = () => {
 
                     )[0],
                 });
-                console.log(this.state.user);
+                //console.log(this.state.user);
 
             });
 

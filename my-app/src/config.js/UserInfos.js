@@ -5,9 +5,9 @@ class UserInfos extends Component {
   constructor(props) {
     super(props);
     this.userInfos = JSON.parse(localStorage.getItem("userInfos"));
-    console.log(localStorage);
+    //console.log(localStorage);
 
-    console.log(localStorage.getItem("userInfos"));
+    //console.log(localStorage.getItem("userInfos"));
   }
 }
 

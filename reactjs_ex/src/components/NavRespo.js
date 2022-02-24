@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Nav, Navbar} from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +21,7 @@ import Notifications from "./Notifications";
 class NavRespo extends Component {
   deconnected() {
     localStorage.clear();
-    console.log("deconnected");
+    //console.log("deconnected");
     UserInfos.userInfos = [];
     ReactDOM.render(
       <React.StrictMode>

@@ -11,7 +11,7 @@ class AddGroupe extends Component {
       idG: this.props.match.params.idG,
       groupeName: "",
     };
-    console.log(this.state.groupeName);
+    //console.log(this.state.groupeName);
     this.changeGroupeNameHandler = this.changeGroupeNameHandler.bind(this);
     this.saveOrUpdateGroupe = this.saveOrUpdateGroupe.bind(this);
     this.cancel = this.cancel.bind(this);
@@ -19,13 +19,13 @@ class AddGroupe extends Component {
 
   componentDidMount() {
     if (this.state.idG == -1) {
-      console.log("ajouter");
+      //console.log("ajouter");
       return;
     } else {
       UserService.getGroupeByIdG(this.state.idG).then((res) => {
-        console.log(this.state.idG);
+        //console.log(this.state.idG);
         let groupe = res.data;
-        console.log(groupe);
+        //console.log(groupe);
         this.setState({
           groupeName: groupe.groupeName,
         });
@@ -65,7 +65,7 @@ class AddGroupe extends Component {
             html += "<li>Ce nom existe deja</li>";
           }
           if (html == "<div class='alert alert-danger'>") {
-            console.log("Modifier avec succés");
+            //console.log("Modifier avec succés");
             UserService.updateGroupe(this.state.idG, groupe).then((res) => {
               UserService.getUserByIdU(UserInfos.userInfos.idU).then(
                 (response2) => {
@@ -101,7 +101,7 @@ class AddGroupe extends Component {
   cancel = (e) => {
     e.preventDefault();
     this.props.history.push("/groupeComponent");
-    console.log("Annuler");
+    //console.log("Annuler");
   };
 
   changeGroupeNameHandler = (event) => {

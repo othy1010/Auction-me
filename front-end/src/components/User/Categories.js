@@ -19,11 +19,11 @@ export const Categories = () => {
         }
         handleChange = (e) => {
             let idx = e.target.selectedIndex;
-            console.log("changed category to :"+e.target.value);
+            //console.log("changed category to :"+e.target.value);
         }
 
         render() {
-            let {categories} = this.state;
+            let { categories } = this.state;
             let optionTemplate = categories.length > 0
                 && categories.map((item, i) => {
                     return (
@@ -45,7 +45,7 @@ export const Categories = () => {
         }
     }
     return (
-        <Category/>
+        <Category />
     );
 };
 

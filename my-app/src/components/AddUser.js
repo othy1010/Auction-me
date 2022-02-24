@@ -23,8 +23,8 @@ class AddUser extends Component {
       password: "",
       profil: "",
     };
-    console.log(UserInfos.id);
-    console.log(this.state.idU);
+    //console.log(UserInfos.id);
+    //console.log(this.state.idU);
     this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
     this.changeSecondNameHandler = this.changeSecondNameHandler.bind(this);
     this.changeEmailHandler = this.changeEmailHandler.bind(this);
@@ -45,7 +45,7 @@ class AddUser extends Component {
 
   componentDidMount() {
     if (this.state.idU == -1) {
-      console.log("ajouter");
+      //console.log("ajouter");
       return;
     } else {
       UserService.getUserByIdU(this.state.idU).then((res) => {
@@ -69,7 +69,7 @@ class AddUser extends Component {
     }
   }
 
-   saveOrUpdateUser = (e) => {
+  saveOrUpdateUser = (e) => {
     var html = "<div class='alert alert-danger'>";
     e.preventDefault();
     let user = {
@@ -87,7 +87,7 @@ class AddUser extends Component {
       password: this.state.password,
       profil: this.state.profil,
     };
-    console.log(JSON.stringify(user));
+    //console.log(JSON.stringify(user));
     if (this.state.idU == -1) {
       UserService.getUserByEmail(this.state.email).then((response) => {
         if (response.data != "") {
@@ -98,9 +98,9 @@ class AddUser extends Component {
             html += "<li>Ce numero du cin existe deja</li>";
           }
           if (html == "<div class='alert alert-danger'>") {
-            toast.loading("Envoie du mail",{duration : 6000});
-            console.log("Ajouter avec succés");
-             UserService.createUser(user).then((res) => {
+            toast.loading("Envoie du mail", { duration: 6000 });
+            //console.log("Ajouter avec succés");
+            UserService.createUser(user).then((res) => {
               toast.success("Creation avec succés");
               this.props.history.push("/userComponent");
             });
@@ -122,7 +122,7 @@ class AddUser extends Component {
             html += "<li>Ce numero du cin existe deja</li>";
           }
           if (html == "<div class='alert alert-danger'>") {
-            console.log("Modifier avec succés");
+            //console.log("Modifier avec succés");
             if (this.state.idU == UserInfos.userInfos.idU) {
               UserService.updateUser(this.state.idU, user);
               UserService.getUserByIdU(this.state.idU).then((response2) => {
@@ -153,7 +153,7 @@ class AddUser extends Component {
 
   getButtons() {
     if (this.state.idU == -1) {
-      console.log("ajouter buttons");
+      //console.log("ajouter buttons");
       return (
         <button
           className="btn btn-success margin-left-40 mt-10 "
@@ -199,7 +199,7 @@ class AddUser extends Component {
     } else {
       this.props.history.push("/userComponent");
     }
-    console.log("Annuler");
+    //console.log("Annuler");
   };
 
   changeFirstNameHandler = (event) => {

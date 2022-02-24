@@ -116,7 +116,7 @@ class UserComponent extends React.Component {
         users: this.state.users.filter((user) => user.idU !== idU),
       });
     });
-    console.log("Suppression avec succés");
+    //console.log("Suppression avec succés");
     toast.success("Suppression avec succés");
   }
 
@@ -318,36 +318,36 @@ class UserComponent extends React.Component {
                 </td>
               </tr>
               <tr className=" tr-user">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><button
-                    onClick={() => this.editUser(user.idU)}
-                    className="btn btn-success "
-                  >
-                    Modifier
-                  </button></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button
+                  onClick={() => this.editUser(user.idU)}
+                  className="btn btn-success "
+                >
+                  Modifier
+                </button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
 
-                  <td>   <button
-                    onClick={() => this.deleteUser(user.idU)}
-                    className="btn btn-danger"
-                  >
-                    Supprimer
-                  </button></td>
-                  
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <td>   <button
+                  onClick={() => this.deleteUser(user.idU)}
+                  className="btn btn-danger"
+                >
+                  Supprimer
+                </button></td>
+
+                <td></td>
+                <td></td>
+                <td></td>
 
 
-               
+
 
               </tr>
             </tbody>
