@@ -65,12 +65,12 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "paymentId")
 	private List<Payment> payments = new ArrayList<Payment>();
-	@Fetch(value = FetchMode.SUBSELECT)
+	/* @Fetch(value = FetchMode.SUBSELECT)
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "itemId")
 	private List<Item> items = new ArrayList<Item>();
 
-	/*
+
 	 * @ManyToOne(fetch = FetchType.LAZY)
 	 * 
 	 * @JoinColumn(name = "idG")

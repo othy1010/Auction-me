@@ -1,16 +1,16 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/user_styles/auctionsProfil.scss"
 
-const AuctionCard = () => {
+const AuctionCard = ({ parentToChild }) => {
 
-    const Card= ({ src, nom, price })=>
+    const Card = ({ src, nom, price }) =>
         <button className="auctionCard">
             <table>
                 <tr>
                     <td>
                         <div className="user_img-wrap">
-                            <img src={src} alt="auction"/>
+                            <img src={src} alt="auction" />
                         </div></td>
                     <td>
                         <tr>
@@ -27,16 +27,16 @@ const AuctionCard = () => {
     class Auction extends React.Component {
         state = {
             imagePreviewUrl: '/images/Bid.jpg',
-            nom:'Amazing item', price:'1000$',
+            nom: 'Amazing item', price: '1000$',
         }
         render() {
-            const { imagePreviewUrl, nom, price} = this.state;
+            const { imagePreviewUrl, nom, price } = this.state;
             return (
                 <div>
                     <Card
                         src={imagePreviewUrl}
-                        nom={nom}
-                        price={price}
+                        nom={parentToChild.itemName}
+                        price={parentToChild.initialPrice}//TODO bid price
                     />
                 </div>
             )
@@ -45,9 +45,9 @@ const AuctionCard = () => {
 
     return (
         <div>
-              <Link to="/auction-info">
-                  <Auction/>
-              </Link>
+            <Link to="/auction-info">
+                <Auction />
+            </Link>
         </div>
     );
 };

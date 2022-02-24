@@ -1,19 +1,26 @@
-import React from 'react';
 import AuctionCard from "./AuctionCard";
+import React, { useEffect, useState } from 'react';
+import itemService from "../../Service/itemService";
 
 const MyMadeAuctions = () => {
-    return (
-        <div  className="user_card">
-                <h3>Auctions I started</h3>
+    const [listItems, setListItems] = useState([])
 
-                <table id="myMadeAuctions">
-                    <tr>
-                        <td><AuctionCard /></td>
-                        <td><AuctionCard /></td>
-                        <td><AuctionCard /></td>
-                    </tr>
-                </table>
-                <button className="user_showHide">Show more / Hide</button>
+    useEffect(() => {
+        itemService.getItemsByUserId(1).then((res) => setListItems(res.data))//TODO userid
+    }, []);
+    return (
+        <div className="user_card">
+            <h3>Auctions I started</h3>
+
+            <table id="myMadeAuctions">
+                <tr>
+                    {listItems.map((item) => (
+                        <td><AuctionCard parentToChild={item} /></td>
+                    ))}
+
+                </tr>
+            </table>
+            <button className="user_showHide">Show more / Hide</button>
         </div>
     );
 };

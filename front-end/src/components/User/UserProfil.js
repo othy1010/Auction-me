@@ -133,7 +133,7 @@ const UserProfil = () => {
                 <div>
                     <Profile
                         onSubmit={this.handleSubmit}
-                        src={"imagePreviewUrl"}
+                        src={"/images/Bid.jpg"}
                         nom={user.firstName}
                         prenom={user.lastName}
                         description={"description"}
