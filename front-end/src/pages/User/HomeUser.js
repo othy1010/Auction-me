@@ -9,12 +9,30 @@ import AuctionCard from "../../components/User/AuctionCard";
 import itemService from "../../Service/itemService";
 
 
-const HomeUser = () => {
-        const [listItems, setListItems] = useState([])
+class HomeUser extends React.Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            listItems: []
+        }
 
-        useEffect(() => {
-            itemService.getItems().then((res) => setListItems(res.data))//TODO new items
-        }, []);
+    }
+    componentDidMount() {
+        itemService.getItems().then((response) => {
+
+
+            console.log(response.data);
+
+            this.setState({
+                listItems: response.data,
+            });
+            //console.log("items");
+            //console.log(this.state.item);
+
+        });
+
+    }
+        render(){
        return (
            <div>
                <NavUser />
@@ -28,17 +46,17 @@ const HomeUser = () => {
                            <h3>Recently added auctions:</h3>
                            <table>
                                <tr>
-                               {listItems.map((item) => (
-                               <td><AuctionCard parentToChild={item} /></td>
+                               {this.state.listItems.map((item) => (
+                               <td><AuctionCard item={item} /></td>
                                ))}
                                </tr>
-                               {/*}
+                               {/*
                                <tr>
                                    <td><AuctionCard /></td>
                                    <td><AuctionCard /></td>
                                    <td><AuctionCard /></td>
                                </tr>
-                              */}
+                               */}
                            </table>
 
                        </div>
@@ -47,10 +65,10 @@ const HomeUser = () => {
                        <Categories />
                    </div>
                </div>
-
                <UserFooter />
            </div>
        );
+    }
 };
 
 export default HomeUser;
