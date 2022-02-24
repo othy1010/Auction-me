@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import "../../styles/user_styles/user_AuctionForm.scss"
+import UserService from '../../Service/UserService';
 
 import {ImgUpload, Title, Name, Description,
     Price, Currency, Brand, Stat, City, Country,
@@ -8,6 +9,7 @@ import {ImgUpload, Title, Name, Description,
 import {Categories} from "./Categories";
 
 const NewAuctionForm = () => {
+    
         function createAuction(src, category, title, name, price, currency, description,
                                brand, stat, city, country, periodStart, periodEnd,
                                owner){
@@ -113,7 +115,7 @@ const NewAuctionForm = () => {
                         </tr>
                         <tr>
                             <td>
-                                <OwnerProfil nom={owner.nom} prenom={owner.prenom}
+                                <OwnerProfil nom={owner.firstName} prenom={owner.secondName}
                                              email={owner.email} phone={owner.phone}
                                              description={owner.description} country={owner.country} />
                             </td>
@@ -151,21 +153,36 @@ const NewAuctionForm = () => {
 
 
         class AuctionProfileCard extends React.Component {
+        
+
             state = {
                 file: '',
                 imagePreviewUrl: '/images/Bid.jpg',description:'',
                 category:'' , title:'', name:'', price:'', currency:'',
                 brand:'', stat:'', city:'', country:'', periodStart:'', periodEnd:'',
                 owner: {
-                    nom:'ALEXUS',
-                    prenom:'Alex',
-                    email:'alex@gmail.com',
-                    phone:'1234567890',
-                    description:'Hello',
-                    country:'X'
+                    firstName: '',
+                    secondName:'',
+                    email: '',
+                    phone:'',
+                    description:"",
+                    country:''
                 },
                 active: 'edit',
                 errors:{}
+            }
+
+            componentDidMount() {
+                UserService.getUserById(1).then((res) => {
+    
+                    console.log(this.state.owner);
+                    this.setState({
+                        owner: res.data
+                    });
+                    console.log(this.state.owner);
+    
+                });
+    
             }
 
             photoUpload = e =>{
@@ -249,7 +266,6 @@ const NewAuctionForm = () => {
                     brand, stat, city, country, periodStart, periodEnd,
                     owner, description,
                     active} = this.state;
-
                 return (
                     <div>
                         {(active === 'edit')?(
@@ -298,7 +314,7 @@ const NewAuctionForm = () => {
                                         <tr>
                                             <td><h3>Your Information:</h3></td>
                                             <td>
-                                                <OwnerProfil nom={owner.nom} prenom={owner.prenom}
+                                                <OwnerProfil nom={owner.firstName} prenom={owner.secondName}
                                                              email={owner.email} phone={owner.phone}
                                                              description={owner.description} country={owner.country} />
                                             </td>
