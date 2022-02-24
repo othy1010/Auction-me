@@ -102,6 +102,17 @@ public class ItemServiceImpl implements ItemService {
 	   public void deleteUser(@PathVariable Long itemId) {
 	      itemRepo.deleteById(itemId);
 	   }
-
+@GetMapping("admin/notifications/auctions")
+	public List<Item> adminNotifsAuctions(){
+		List<Item> listItems =  getItems();
+		List<Item> notifAuctions = null;
+		for(Item item : listItems){
+				if(!item.getIsApprooved()){
+					notifAuctions.add(item);
+				}
+		}
+		notifAuctions.sort(Comparator.comparing(Item::getItemId).reversed());
+		return notifAuctions;
+	}
 
 }
