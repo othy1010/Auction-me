@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Privacy from "./pages/Privacy";
+import ResultsByCategory from './pages/User/ResultsByCategory';
 
 
 
@@ -39,6 +40,7 @@ const AppUser = () => {
             <Route exact path="/all-ended-auctions" element={<Results/>} />
             <Route exact path="/auction-info" element={<AuctionInfo/>} />
             <Route exact path="/new-auction" element={<NewAuction/>} />
+            <Route path="/auctions/:categoryName" element={<ResultsByCategory/>} />
 
             <Route exact path="/privacy-policy" element={<UserPricavyPolicy />}/>
             <Route exact path="/about-us" element={<UserAboutUs />}/>
