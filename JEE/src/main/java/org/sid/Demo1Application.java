@@ -5,11 +5,9 @@ import java.util.Date;
 
 import org.sid.dao.ItemRepo;
 import org.sid.dao.Token;
-import org.sid.entities.Bid;
-import org.sid.entities.Payment;
-import org.sid.entities.Item;
-import org.sid.entities.User;
+import org.sid.entities.*;
 import org.sid.servicesImp.BidServiceImpl;
+import org.sid.servicesImp.CategoryServiceImpl;
 import org.sid.servicesImp.ItemServiceImpl;
 import org.sid.servicesImp.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +25,8 @@ public class Demo1Application implements CommandLineRunner {
 	private ItemServiceImpl itemServiceImpl;
 	@Autowired
 	private BidServiceImpl bidServiceImpl;
+	@Autowired
+	private CategoryServiceImpl categoryService;
 
 	/*private UserRepo userRepo ;
 	@Autowired
@@ -44,6 +44,8 @@ public class Demo1Application implements CommandLineRunner {
 				"anass.eljazouly@gmail.com","1234",true,true,"bdfs4444",null,null));
 		itemServiceImpl.saveItem(new Item(null,"item1",(float)180.40,1L,1L,true,"MAROC","blablalblalalba" ));
 		bidServiceImpl.saveBid(new Bid(null,1L,1L,(float)400.20,true));
+		categoryService.saveCategory(new Category(null, "Games", 0L));
+		categoryService.saveCategory(new Category(null, "Electronic devices", 0L));
 		/*userServiceImpl.saveUser(new User(null,new Token().nextString(),"AGENT","1",1,"MAROC","RABAT","HAY RIAD",new Date(1995/01/15),"CASA"
 				,"XXXX2",0652552675,"agent@gmail.com","1234","AGENT",null));
 		userServiceImpl.saveUser(new User(null,new Token().nextString(),"RESPO","1",1,"MAROC","SALE","XXXXX",new Date(1980/10/05),"FES"
