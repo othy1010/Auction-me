@@ -1,5 +1,6 @@
 package org.sid.servicesImp;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,15 +11,7 @@ import org.sid.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.util.SendEmail;
 
 @CrossOrigin(origins = "http://localhost:3000/")
@@ -26,6 +19,7 @@ import org.util.SendEmail;
 @Transactional
 @RestController
 @RequestMapping("api/")
+
 public class UserServiceImpl implements UserService {
    @Autowired
    private UserRepo userRepo;
@@ -89,9 +83,6 @@ public class UserServiceImpl implements UserService {
       userUpdated.setAddress(user.getAddress());
       userUpdated.setPhone(user.getPhone());
       userUpdated.setPaymentAccount(user.getPaymentAccount());
-      userUpdated.setCardNumber(user.getCardNumber());
-      userUpdated.setCvv(user.getCvv());
-      userUpdated.setExpireDate(user.getExpireDate());
       userRepo.save(userUpdated);
       return userUpdated;
    }
@@ -127,5 +118,7 @@ public class UserServiceImpl implements UserService {
       notifsUsers.sort(Comparator.comparing(User::getUserId).reversed());
       return notifsUsers;
    }
+
+   
 
 }
