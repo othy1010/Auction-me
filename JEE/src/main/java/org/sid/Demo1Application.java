@@ -41,7 +41,7 @@ public class Demo1Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		userServiceImpl.saveUser(new User(null,"anass",new Token().nextString(),"Anass","EL JAZOULY",1,
 				"MAROC","CASA","AIN CHOK",new Date(2000/04/04),"TEMARA",0652052654,
-				"anass.eljazouly@gmail.com","1234",true,true,"bdfs4444",null,null));
+				"anass.eljazouly@gmail.com","1234",true,true,"bdfs4444",null,123, null, null, null));
 		itemServiceImpl.saveItem(new Item(null,"item1",(float)180.40,1L,1L,true,"MAROC","blablalblalalba" ));
 		itemServiceImpl.saveItem(new Item(null,"item2",(float)200.40,1L,2L,true,"MAROC","blablalblalalba" ));
 		bidServiceImpl.saveBid(new Bid(null,1L,1L,(float)400.20,true));

@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryService from "../../Services/CategoryService";
+import CategoryService from "../../Service/categoryService";
 
 export const Categories = () => {
 
