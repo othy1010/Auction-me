@@ -11,7 +11,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 
 const NavAdmin = () => {
     function deconnect() {
-        //localStorage.clear();
+        localStorage.clear();
         console.log("deconnected");
         UserInfo.userInfos = [];
         ReactDOM.render(
