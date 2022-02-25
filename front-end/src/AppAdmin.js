@@ -20,16 +20,16 @@ const AppAdmin = () => {
     return (
         <Routes>
             <Route exact path='/' ><Home /></Route>
-            <Route path='/login/:newUser' ><Login/></Route>
+            <Route exact path='/login' ><Login/></Route>
             <Route exact path="/sign-up"><SignUp/></Route>
-            <Route path='/AdminHome/:admin'><AdminHome /></Route>
+            <Route exact path='/AdminHome'><AdminHome /></Route>
             <Route exact path='/UsersList'><UsersList/></Route>
             <Route path='/user-info/:user'><UserDetails/></Route>
             <Route exact path='/categories'><CategList /></Route>
             <Route exact path='/auctions'><AuctionsList /></Route>
             <Route exact path='/privacy'><Privacy/></Route>
             <Route path='/auction-details/:auction'><AuctionDetails /></Route>
-            <Route path='/admin-profil/:admin'><AdminProfil /></Route>
+            <Route exact path='/admin-profil'><AdminProfil /></Route>
             <Route exact path='admin-notifications'><AdminNotification/></Route>
             <Route path="*"><NotFoundAdmin/></Route>
 
