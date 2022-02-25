@@ -17,12 +17,8 @@ const NavBar = () => {
           <a href="/">Home</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <Link to={
-              {
-                  pathname:"/login/*",
-                  state: {stateParam: false}
-              }
-          }>Log in</Link>
+          <a href="/login">Log in</a>
+
         </div>
         
           <div className="account">
