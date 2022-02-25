@@ -1,23 +1,25 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppAdmin from "./AppAdmin";
 import AppUser from "./AppUser";
 import Home from "./pages/Home";
+import UserInfo from "./configs/UserInfo";
 
-
-function App() {
-    const admin = false;   //change to true to see admin side
-
-    return (
-        <Router>
-            {/*Ici on insère le composant navbar*/}
-            {
-                (admin === true) ? <AppAdmin /> : <AppUser />
-            }
-
-        </Router>
-
-    );
+const App = () => {
+    console.log("UserInfo.userInfos -->");
+    console.log(UserInfo.userInfos);
+    if(UserInfo.userInfos == null)
+    {
+        console.log("i m user") ;
+        return <AppUser />;
+    }
+    else if (UserInfo.userInfos.isAdmin == true) {
+        console.log("i m admin") ;
+        return <AppAdmin />;
+    }
+    else{
+        console.log("i m user") ;
+        return <AppUser />;
+    }
 }
 
 export default App;
