@@ -57,6 +57,12 @@ public class User {
 	private Boolean isConfirmed;
 	@Column(length = 50)
 	private String paymentAccount;
+	@Column(length = 50)
+	private String cardNumber;
+	@Column(length = 3)
+	private int cvv;
+	@Temporal(TemporalType.DATE)
+	private Date expireDate;
 	@Fetch(value = FetchMode.SUBSELECT)
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "bidId")

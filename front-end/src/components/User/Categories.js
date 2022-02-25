@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoryService from "../../Services/CategoryService";
 
 export const Categories = () => {
 
@@ -6,20 +7,21 @@ export const Categories = () => {
         constructor(props) {
             super(props);
             this.state = {
-                categories: [
-                    { name: 'Choose a category', id: 0 },
-                    { name: 'something', id: 1 },
-                    { name: 'slave', id: 2 },
-                    { name: 'electronics', id: 3 },
-                    { name: 'food', id: 4 },
-                    { name: 'antics', id: 5 }
-                ]
+                categories: [ ]
             };
             this.handleChange = this.handleChange.bind(this);
+            this.initCategories = this.initCategories.binf(this);
         }
         handleChange = (e) => {
             let idx = e.target.selectedIndex;
             //console.log("changed category to :"+e.target.value);
+        }
+        initCategories=(e) => {
+            let categories = CategoryService.findAllCategories();
+            for(var i=0; i<categories.size; i++){
+                let cat = {name: categories[i].categoryName, id: categories[i].categoryId};
+                this.state.categories.push(cat);
+            }
         }
 
         render() {

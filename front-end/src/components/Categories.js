@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CategoryService from '../Service/categoryService.js'
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
     const [listCategories, setListCategories] = useState([])
@@ -12,7 +13,16 @@ const Categories = () => {
     const CreateCateg = () => {
         return (
             <ul>{listCategories.map((category) => (
-                <li> <a href="\all-auctions"> {category.categoryName}</a> </li>
+                <li>
+                    <Link to={`/auctions/${category.categoryName}`}
+                        state= {{
+                            categId: category.categoryId
+                        }}
+                    >{category.categoryName}</Link>
+                </li>
+                /*
+                <li> <a href="\all-auctions" > {category.categoryName}</a> </li>
+                */
             ))}
             </ul>
         )

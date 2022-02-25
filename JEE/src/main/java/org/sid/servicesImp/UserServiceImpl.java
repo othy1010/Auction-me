@@ -25,7 +25,6 @@ import org.util.SendEmail;
 @Transactional
 @RestController
 @RequestMapping("api/")
-
 public class UserServiceImpl implements UserService {
    @Autowired
    private UserRepo userRepo;
@@ -34,19 +33,19 @@ public class UserServiceImpl implements UserService {
    @PostMapping("users")
    public User saveUser(@PathVariable User user) {
       user.setToken(new Token().nextString());
-		User userN = userRepo.save(user);
-		String sub = "Creation du compte";
-		String html="<h1>Creation de votre compte</h1><p>Vous trouvez ci-joint les informations"
-				+ " necessaires pour vous connectez</p><ul><li>email : "+user.getEmail()+"</li><li>mot de passe : "
-				+user.getPassword()+"</li></ul>";
-		//SendEmail.sendMail(user.getEmail(),sub,html);
-		return  userN;
+      User userN = userRepo.save(user);
+      String sub = "Creation du compte";
+      String html="<h1>Creation de votre compte</h1><p>Vous trouvez ci-joint les informations"
+              + " necessaires pour vous connectez</p><ul><li>email : "+user.getEmail()+"</li><li>mot de passe : "
+              +user.getPassword()+"</li></ul>";
+      //SendEmail.sendMail(user.getEmail(),sub,html);
+      return  userN;
    }
-   
+
    @GetMapping("users")
-	public List<User> getUsers(){
-		return this.userRepo.findAll();
-	}
+   public List<User> getUsers(){
+      return this.userRepo.findAll();
+   }
 
    @Override
    @GetMapping("users/email/{email}")
@@ -89,10 +88,13 @@ public class UserServiceImpl implements UserService {
       userUpdated.setAddress(user.getAddress());
       userUpdated.setPhone(user.getPhone());
       userUpdated.setPaymentAccount(user.getPaymentAccount());
+      userUpdated.setCardNumber(user.getCardNumber());
+      userUpdated.setCvv(user.getCvv());
+      userUpdated.setExpireDate(user.getExpireDate());
       userRepo.save(userUpdated);
       return userUpdated;
    }
-   
+
    @Override
    @DeleteMapping("users/userId/{userId}")
    public void deleteUser(@PathVariable Long userId) {
@@ -109,5 +111,20 @@ public class UserServiceImpl implements UserService {
    // }
 
    
+   @GetMapping("admin/notifications/users")
+   public List<User> adminNotifsUsers(){
+      List<User> listUsers =  getUsers();
+      List<User> notifsUsers = null;
+      for(User user : listUsers){
+         if(!user.getIsAdmin()){
+            if(!user.getIsConfirmed()){
+               notifsUsers.add(user);
+            }
+         }
+      }
+      //notifications lifo
+      notifsUsers.sort(Comparator.comparing(User::getUserId).reversed());
+      return notifsUsers;
+   }
 
 }
