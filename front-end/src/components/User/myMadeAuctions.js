@@ -1,6 +1,7 @@
 import AuctionCard from "./AuctionCard";
 import React, { useEffect, useState } from 'react';
 import itemService from "../../Service/itemService";
+import { Link } from "react-router-dom";
 
 
 
@@ -42,7 +43,35 @@ class MyMadeAuctions extends React.Component {
                 <table id="myMadeAuctions">
                     <tr>
                         {this.state.items.map((item) => (
-                            <td><AuctionCard item={item} /></td>
+                            <td><div>
+                                <Link to={{
+                                    pathname: `/auction-info/${item.itemId}`,
+                                    // state: { itemname },
+                                    // itemId: this.state.item.itemId
+                                }}
+                                >
+                                    <button className="auctionCard">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div className="user_img-wrap">
+                                                        <img src={"/images/Bid.jpg"} alt="auction" />
+                                                    </div></td>
+                                                <td>
+                                                    <tr>
+                                                        <td><b>Title:</b></td><td>{item.itemName}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Top bid:</b></td><td>{item.initialPrice}</td>
+                                                    </tr>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </button>
+
+                                </Link>
+                            </div>
+                            </td>
                         ))}
 
                     </tr>
