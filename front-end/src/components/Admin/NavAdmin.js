@@ -3,12 +3,30 @@ import logo from '../../assets/logo.png'
 import '../../styles/admin_styles/NavAdmin.css'
 import {Link} from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import UserInfo from "../../configs/UserInfo";
+import ReactDOM from "react-dom";
+import App from "../../App";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
 
 const NavAdmin = () => {
+    function deconnect() {
+        //localStorage.clear();
+        console.log("deconnected");
+        UserInfo.userInfos = [];
+        ReactDOM.render(
+            <React.StrictMode>
+                <App/>
+            </React.StrictMode>,
+            document.getElementById("root")
+        );
+    };
     return (
+        <Router>
+            <Route>
         <div className='navadmin'>
             <a id="logo" href="/AdminHome">
-                <div class="logo">
+                <div className="logo">
                     <img src={logo} alt='logo'/>
                     TorL
                 </div>
@@ -21,12 +39,14 @@ const NavAdmin = () => {
         </div>
         
           <div className="logout">
-              <Link to="/login" >
-                  <button id="logout">Log out</button>
-              </Link>
-
+              <NavLink to="/login">
+                  <button id="logout" onClick={deconnect}>Log out</button>
+              </NavLink>
           </div>
         </div>
+
+            </Route>
+        </Router>
     );
 };
 
