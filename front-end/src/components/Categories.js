@@ -14,10 +14,11 @@ const Categories = () => {
         return (
             <ul>{listCategories.map((category) => (
                 <li>
-                    <Link to={`/auctions/${category.categoryName}`}
-                        state= {{
+                    <Link to={{
+                         pathname: `/auctions/${category.categoryName}`,
+                        state: {
                             categId: category.categoryId
-                        }}
+                        }}}
                     >{category.categoryName}</Link>
                 </li>
                 /*
