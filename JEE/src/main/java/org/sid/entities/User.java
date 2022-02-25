@@ -4,17 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -48,7 +38,7 @@ public class User {
 	@Column(length = 50)
 	private String birthplace;
 	@Column(length = 10)
-	private int phone;
+	private double phone;
 	@Column(length = 50)
 	private String email;
 	@Column(length = 50)
@@ -57,12 +47,6 @@ public class User {
 	private Boolean isConfirmed;
 	@Column(length = 50)
 	private String paymentAccount;
-	@Column(length = 50)
-	private String cardNumber;
-	@Column(length = 3)
-	private int cvv;
-	@Temporal(TemporalType.DATE)
-	private Date expireDate;
 	@Fetch(value = FetchMode.SUBSELECT)
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "bidId")
@@ -71,12 +55,12 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "paymentId")
 	private List<Payment> payments = new ArrayList<Payment>();
-	/* @Fetch(value = FetchMode.SUBSELECT)
+	@Fetch(value = FetchMode.SUBSELECT)
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "itemId")
 	private List<Item> items = new ArrayList<Item>();
 
-
+	/*
 	 * @ManyToOne(fetch = FetchType.LAZY)
 	 * 
 	 * @JoinColumn(name = "idG")
