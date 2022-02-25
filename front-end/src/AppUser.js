@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch as Routes, Route} from 'react-router-dom';
 
 import NotFoundUser from './pages/User/NotFoundUser';
 import HomeUser from './pages/User/HomeUser';
@@ -25,27 +25,59 @@ import ResultsByCategory from './pages/User/ResultsByCategory';
 const AppUser = () => {
     return (
         <Routes>
-            <Route exact path='/login' element={<Login/>} />
-            <Route exact path="/sign-up" element={<SignUp/>} />
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/privacy' element={<Privacy/>} />
-            
-            
+                <Route exact path='/login'>
+                        <Login/>
+                </Route>
+                <Route exact path="/sign-up"> 
+                        <SignUp/>
+                </Route>
+                <Route exact path='/' >
+                        <Home/>
+                </Route>
+                <Route exact path='/privacy'>
+                        <Privacy/>
+                </Route>
 
-            <Route exact path="/home" element={<HomeUser/>} />
-            <Route exact path="/my-profil" element={<MyProfil/>} />
-            <Route exact path="/notifications" element={<Notifications/>} />
-            <Route path="/all-auctions" element={<Results/>} />
-            <Route path="/search/*" element={<Results/>} />
-            <Route exact path="/all-ended-auctions" element={<Results/>} />
-            <Route exact path="/auction-info" element={<AuctionInfo/>} />
-            <Route exact path="/new-auction" element={<NewAuction/>} />
-            <Route path="/auctions/:categoryName" element={<ResultsByCategory/>} />
-
-            <Route exact path="/privacy-policy" element={<UserPricavyPolicy />}/>
-            <Route exact path="/about-us" element={<UserAboutUs />}/>
-            <Route exact path="/contact-us" element={<UserContactUs />}/>
-            <Route path="*" element={<NotFoundUser/>} />
+                
+                <Route exact path="/home"> 
+                        <HomeUser/>
+                </Route>
+                <Route exact path="/my-profil" > 
+                        <MyProfil/>
+                </Route>
+            <Route exact path="/notifications">
+                <Notifications/>
+            </Route>
+            <Route path="/all-auctions" >
+                <Results/>
+            </Route>
+            <Route path="/search/*" >
+                <Results/>
+            </Route>
+            <Route exact path="/all-ended-auctions" >
+                <Results/>
+            </Route>
+            <Route exact path="/auction-info" >
+                <AuctionInfo/>
+            </Route>
+            <Route exact path="/new-auction" >            
+                <NewAuction/>
+            </Route>
+            <Route path="/auctions/:categoryName">
+                <ResultsByCategory/>
+            </Route>
+            <Route exact path="/privacy-policy">
+                    <UserPricavyPolicy />
+            </Route>
+            <Route exact path="/about-us">
+                    <UserAboutUs />
+            </Route>
+            <Route exact path="/contact-us" >
+                    <UserContactUs />
+            </Route>
+            <Route path="*">
+                    <NotFoundUser/>
+            </Route>
         </Routes>
     );
 };
