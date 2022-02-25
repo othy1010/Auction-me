@@ -4,9 +4,10 @@ import Button from "react-bootstrap/Button";
 import {Container} from "@material-ui/core";
 
 import '../styles/admin_styles/Login.css'
-import {Link, useParams, useLocation, BrowserRouter} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+
 import {Component} from "react";
-import { Router, Switch as Routes, Route} from 'react-router-dom';
 import toast from "react-hot-toast";
 import ReactDOM from "react-dom";
 import UserService from "../Service/UserService";
@@ -76,7 +77,9 @@ class Login extends Component {
                         ReactDOM.render(
                             <React.StrictMode>
                                 <Router>
-                                    <AdminHome />
+                                    <Route>
+                                        <AdminHome />
+                                    </Route>
                                 </Router>
                             </React.StrictMode>,
                             document.getElementById("root")
@@ -89,7 +92,9 @@ class Login extends Component {
                         ReactDOM.render(
                             <React.StrictMode>
                             <Router>
-                                <HomeUser />
+                                <Route>
+                                    <HomeUser />
+                                </Route>
                             </Router>
                         </React.StrictMode>,
                             document.getElementById("root")
