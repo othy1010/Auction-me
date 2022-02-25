@@ -62,18 +62,53 @@ export const Phone =({ onChange, value })=>
                 value={value}
                 required/>
         </div>
-    export const Adress =({ onChange, value })=>
+    export const Address =({ onChange, value })=>
         <div className="user_field">
-            <label htmlFor="adress">
+            <label htmlFor="address">
                 Adress:
             </label>
             <input
-                id="adress"
+                id="address"
                 type="text"
                 onChange={onChange}
                 value={value}
                 required/>
         </div>
+export const Birthday =({ onChange, value })=>
+    <div className="user_field">
+        <label htmlFor="birthday">
+            Birthday:
+        </label>
+        <input
+            id="birthday"
+            type="date"
+            onChange={onChange}
+            value={value}
+            />
+    </div>
+export const Birthplace =({ onChange, value })=>
+    <div className="user_field">
+        <label htmlFor="birthplace">
+            Birth place:
+        </label>
+        <input
+            id="birthplace"
+            type="text"
+            onChange={onChange}
+            value={value}
+            />
+    </div>
+export const Sexe =({ onChange, value })=>
+    <div className="user_field">
+        <label htmlFor="sexe">
+            Sexe:
+        </label>
+        <select id="sexe" value={value} required onChange={onChange}>
+            <option value={3} autoFocus >Not specified</option>
+            <option value={1}>Male</option>
+            <option value={0}>Female</option>
+        </select>
+    </div>
 export const Postal =({ onChange, value })=>
         <div className="user_field">
             <label htmlFor="postal">
@@ -193,5 +228,5 @@ export const CVV =({ onChange, value })=>
         </div>
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {ImgUpload, Nom, Prenom, Description, Phone, Adress, Postal, City,
+export default {ImgUpload, Nom, Prenom, Description, Phone, Address, Birthday, Birthplace, Sexe, Postal, City,
                 Country, CardNumber, ExpireDate, CVV, Email, Password, ConfPassword};
