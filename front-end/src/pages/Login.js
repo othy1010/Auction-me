@@ -87,7 +87,6 @@ class Login extends Component {
                     }
                     else {
                         this.props.history.push("/my-profil")
-
                         toast.success("Connection avec succés");
                         ReactDOM.render(
                             <React.StrictMode>
