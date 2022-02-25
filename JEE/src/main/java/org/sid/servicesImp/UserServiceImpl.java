@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
    @Override
    @PostMapping("users")
-   public User saveUser(@PathVariable User user) {
+   public User saveUser(@RequestBody User user) {
       user.setToken(new Token().nextString());
       User userN = userRepo.save(user);
       String sub = "Creation du compte";
