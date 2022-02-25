@@ -142,12 +142,7 @@ const SignUpForm = () => {
                 <div className="user_row">
                     <button type="submit" id="submitBtn"
                             className="user_save">Save</button>
-                    <Link to={
-                        {
-                            pathname:"/login/*",
-                            state: {stateParam: false}
-                        }
-                    }>
+                    <Link to="/login">
                         <button type="cancel" className="user_cancel">Cancel</button>
                     </Link>
                 </div>
