@@ -1,7 +1,7 @@
 import React from 'react';
 import NavAdmin from '../../components/Admin/NavAdmin';
 import '../../styles/admin_styles/UserDetails.css'
-import user from '../../assets/user.png'
+import user from '../../assets/userPfp.png'
 
 const UserDetails = () => {
     return (
@@ -9,9 +9,13 @@ const UserDetails = () => {
             <NavAdmin />
             <div className="UserDetails">
             <img src={user} alt="user" />
-                <p><span>First Name :</span> Mark 
+                <p><span>First Name :</span> Mark
                 <br /><br />
                 <span>Last Name :</span> Otto
+                <br /><br />
+                <span>Birthday :</span> 02/03/2001
+                <br /><br />
+                <span>Birth Place :</span> Earth
                 <br /><br />
                 <span>Approved :</span> No
                 </p>
