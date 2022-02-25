@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch as Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch as Routes, Route} from 'react-router-dom';
 
 import NotFoundUser from './pages/User/NotFoundUser';
 import HomeUser from './pages/User/HomeUser';
@@ -24,62 +24,63 @@ import ResultsByCategory from './pages/User/ResultsByCategory';
 
 const AppUser = () => {
     return (
+        <Router>
         <Routes>
-            <Route exact path='/login'>
-                <Login />
-            </Route>
-            <Route exact path="/sign-up">
-                <SignUp />
-            </Route>
-            <Route exact path='/' >
-                <Home />
-            </Route>
-            <Route exact path='/privacy'>
-                <Privacy />
-            </Route>
+                <Route exact path='/login'>
+                        <Login/>
+                </Route>
+                <Route exact path="/sign-up"> 
+                        <SignUp/>
+                </Route>
+                <Route exact path='/' >
+                        <Home/>
+                </Route>
+                <Route exact path='/privacy'>
+                        <Privacy/>
+                </Route>
 
-
-            <Route exact path="/home">
-                <HomeUser />
-            </Route>
-            <Route exact path="/my-profil" >
-                <MyProfil />
-            </Route>
+                
+                <Route exact path="/home"> 
+                        <HomeUser/>
+                </Route>
+                <Route exact path="/my-profil" > 
+                        <MyProfil/>
+                </Route>
             <Route exact path="/notifications">
-                <Notifications />
+                <Notifications/>
             </Route>
             <Route path="/all-auctions" >
-                <Results />
+                <Results/>
             </Route>
             <Route path="/search/*" >
-                <Results />
+                <Results/>
             </Route>
             <Route exact path="/all-ended-auctions" >
-                <Results />
+                <Results/>
             </Route>
             <Route exact path="/auction-info" >
-                <AuctionInfo />
+                <AuctionInfo/>
             </Route>
-            <Route exact path="/new-auction" >
-                <NewAuction />
+            <Route exact path="/new-auction" >            
+                <NewAuction/>
             </Route>
             <Route path="/auctions/:categoryName">
-                <ResultsByCategory />
+                <ResultsByCategory/>
             </Route>
             <Route exact path="/privacy-policy">
-                <UserPricavyPolicy />
+                    <UserPricavyPolicy />
             </Route>
             <Route exact path="/about-us">
-                <UserAboutUs />
+                    <UserAboutUs />
             </Route>
             <Route exact path="/contact-us" >
-                <UserContactUs />
+                    <UserContactUs />
             </Route>
             <Route path="*">
-                <NotFoundUser />
+                    <NotFoundUser/>
             </Route>
         </Routes>
-
+        </Router>
     );
 };
 
