@@ -1,9 +1,5 @@
 import './App.css';
-<<<<<<< HEAD
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-=======
-import { BrowserRouter as Router, Switch as Routes, Route} from 'react-router-dom';
->>>>>>> 146c826192fdc41b5742e076e76d9f23e569d9ba
+import { BrowserRouter as Router, Switch as Routes, Route } from 'react-router-dom';
 
 import NotFoundUser from './pages/User/NotFoundUser';
 import HomeUser from './pages/User/HomeUser';
