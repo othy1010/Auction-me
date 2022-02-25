@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Router, Switch as Routes, Route} from 'react-router';
 import AdminHome from './pages/Admin/AdminHome';
 import UsersList from './pages/Admin/UsersList';
 
@@ -19,24 +19,22 @@ import AdminNotification from './pages/Admin/AdminNotification';
 const AppAdmin = () => {
     return (
         <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/login' element={<Login/>} />
-            <Route exact path="/sign-up" element={<SignUp/>} />
-            <Route exact path='/AdminHome' element={<AdminHome />} />
-            <Route exact path='/UsersList' element={<UsersList/>} />
-            <Route exact path='/user-info' element={<UserDetails/>} />
-            <Route exact path='/categories' element={<CategList />} />
-            <Route exact path='/auctions' element={<AuctionsList />} />
-            <Route exact path='/privacy' element={<Privacy/>} />
-            <Route exact path='/auction-details' element={<AuctionDetails />} />
-            <Route exact path='/admin-profil' element={<AdminProfil />} />
-            <Route exact path='admin-notifications' element={<AdminNotification/>} />
-            <Route path="*" element={<NotFoundAdmin/>} />
+                <Route exact path='/' ><Home /></Route>
+            <Route exact path='/login' ><Login/></Route>
+            <Route exact path="/sign-up"><SignUp/></Route>
+            <Route path='/AdminHome/:type'><AdminHome /></Route>
+            <Route exact path='/UsersList'><UsersList/></Route>
+            <Route exact path='/user-info'><UserDetails/></Route>
+            <Route exact path='/categories'><CategList /></Route>
+            <Route exact path='/auctions'><AuctionsList /></Route>
+            <Route exact path='/privacy'><Privacy/></Route>
+            <Route exact path='/auction-details'><AuctionDetails /></Route>
+            <Route exact path='/admin-profil'><AdminProfil /></Route>
+            <Route exact path='admin-notifications'><AdminNotification/></Route>
+            <Route path="*"><NotFoundAdmin/></Route>
 
         </Routes>
     );
 };
 
 export default AppAdmin;
-
-
