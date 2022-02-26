@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/admin_styles/UsersList.css'
-import user from '../../assets/user.png'
+import user from '../../assets/userPfp.png'
 
 const UserCard = () => {
     return (
