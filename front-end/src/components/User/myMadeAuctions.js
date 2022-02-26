@@ -2,6 +2,7 @@ import AuctionCard from "./AuctionCard";
 import React, { useEffect, useState } from 'react';
 import itemService from "../../Service/itemService";
 import { Link } from "react-router-dom";
+import UserInfo from "../../configs/UserInfo";
 
 
 
@@ -16,7 +17,7 @@ class MyMadeAuctions extends React.Component {
     }
 
     componentDidMount() {
-        itemService.getItemsByUserId(1).then((response) => {
+        itemService.getItemsByUserId(UserInfo.userInfos.userId).then((response) => {
 
 
             //console.log(response.data);

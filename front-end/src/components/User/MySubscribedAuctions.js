@@ -1,6 +1,7 @@
 import AuctionCard from "./AuctionCard";
 import React, { useEffect, useState } from 'react';
 import itemService from "../../Service/itemService";
+import UserInfo from "../../configs/UserInfo";
 
 
 
@@ -15,7 +16,7 @@ class MySubscribedAuctions extends React.Component {
     }
 
     componentDidMount() {
-        itemService.getBidedItemByItemId(1).then((response) => {
+        itemService.getBidedItemByItemId(UserInfo.userInfos.userId).then((response) => {
 
 
             //console.log(response.data);
