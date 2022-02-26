@@ -28,40 +28,40 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/")
 public class ItemServiceImpl implements ItemService {
-   @Autowired
-   private ItemRepo itemRepo;
-   @Autowired
-   private BidRepo bidRepo;
+	@Autowired
+	private ItemRepo itemRepo;
+	@Autowired
+	private BidRepo bidRepo;
 
-   @Override
-   @PostMapping("items")
-   public Item saveItem(@RequestBody Item item) {
-      return itemRepo.save(item);
-   }
-   
-   @GetMapping("items")
+	@Override
+	@PostMapping("items")
+	public Item saveItem(@RequestBody Item item) {
+		return itemRepo.save(item);
+	}
+
+	@GetMapping("items")
 	public List<Item> getItems(){
 		return this.itemRepo.findAll();
 	}
-   
-   @Override
-   @GetMapping("items/userId/{userId}")
-   public List<Item> findAllByUserId(@PathVariable Long userId) {
-      return itemRepo.findAllByUserId(userId);
-   }
+
+	@Override
+	@GetMapping("items/userId/{userId}")
+	public List<Item> findAllByUserId(@PathVariable Long userId) {
+		return itemRepo.findAllByUserId(userId);
+	}
 
 
-   @Override
-   @GetMapping("items/categoryId/{categoryId}")
-   public List<Item> findAllByCategoryId(@PathVariable Long categoryId) {
-      return itemRepo.findAllByCategoryId(categoryId);
-   }
+	@Override
+	@GetMapping("items/categoryId/{categoryId}")
+	public List<Item> findAllByCategoryId(@PathVariable Long categoryId) {
+		return itemRepo.findAllByCategoryId(categoryId);
+	}
 
-   @Override
-   @GetMapping("items/itemId/{itemId}")
-   public Item findByItemId(@PathVariable Long itemId) {
-      return itemRepo.findByItemId(itemId);
-   }
+	@Override
+	@GetMapping("items/itemId/{itemId}")
+	public Item findByItemId(@PathVariable Long itemId) {
+		return itemRepo.findByItemId(itemId);
+	}
 
 	@Override
 	@GetMapping("items/inItemName/{inItemName}")
@@ -80,29 +80,31 @@ public class ItemServiceImpl implements ItemService {
 		}
 		return items;
 	}
-	
-	 @Override
-	   @PutMapping("items/itemId/{itemId}")
-	   public Item updateItem(@PathVariable Long itemId, @RequestBody Item item) {
-	      Item itemUpdated = itemRepo.findByItemId(itemId);
 
-	      itemUpdated.setItemName(item.getItemName());
-	      itemUpdated.setInitialPrice(item.getInitialPrice());
-	      itemUpdated.setCategoryId(item.getCategoryId());
-	      itemUpdated.setIsApprooved(item.getIsApprooved());
-	      itemUpdated.setTitle(item.getTitle());
-	      itemUpdated.setText(item.getText());
+	@Override
+	@PutMapping("items/itemId/{itemId}")
+	public Item updateItem(@PathVariable Long itemId, @RequestBody Item item) {
+		Item itemUpdated = itemRepo.findByItemId(itemId);
 
-	      itemRepo.save(itemUpdated);
-	      return itemUpdated;
-	   }
-	 
-	 @Override
-	   @DeleteMapping("items/itemId/{itemId}")
-	   public void deleteUser(@PathVariable Long itemId) {
-	      itemRepo.deleteById(itemId);
-	   }
-@GetMapping("admin/notifications/auctions")
+		itemUpdated.setItemName(item.getItemName());
+		itemUpdated.setInitialPrice(item.getInitialPrice());
+		itemUpdated.setCategoryId(item.getCategoryId());
+		itemUpdated.setIsApprooved(item.getIsApprooved());
+		itemUpdated.setTitle(item.getTitle());
+		itemUpdated.setText(item.getText());
+
+		itemRepo.save(itemUpdated);
+		return itemUpdated;
+	}
+
+	@Override
+	@DeleteMapping("items/itemId/{itemId}")
+	public void deleteUser(@PathVariable Long itemId) {
+		itemRepo.deleteById(itemId);
+	}
+
+
+	@GetMapping("admin/notifications/auctions")
 	public List<Item> adminNotifsAuctions(){
 		List<Item> listItems =  getItems();
 		List<Item> notifAuctions = null;
@@ -114,5 +116,4 @@ public class ItemServiceImpl implements ItemService {
 		notifAuctions.sort(Comparator.comparing(Item::getItemId).reversed());
 		return notifAuctions;
 	}
-
 }

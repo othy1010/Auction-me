@@ -20,10 +20,10 @@ public interface ItemService {
    List<Item> findAllByItemNameLike(String inItemName);
 
 
-    List<Item> findAllByUserIdAndBidId(Long userId);
+   List<Item> findAllByUserIdAndBidId(Long userId);
 
-    Item updateItem(Long itemId, Item item);
+   Item updateItem(Long itemId, Item item);
    void deleteUser( Long itemId);
-   
-   
+
+
 }

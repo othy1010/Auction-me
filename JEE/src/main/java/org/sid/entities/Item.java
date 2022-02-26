@@ -39,7 +39,7 @@ public class Item {
 		private Long categoryId;
 		private Boolean isApprooved;
 		private String title ;
-		private String text ;		
+		private String text ;
 }
 
 

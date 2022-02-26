@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.sid.dao.CategoryRepo;
 import org.sid.entities.Category;
-import org.sid.entities.Item;
 import org.sid.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,20 +29,20 @@ public class CategoryServiceImpl implements CategoryService {
    private CategoryRepo categoryRepo;
 
    @Override
-   @PostMapping("categorys")
+   @PostMapping("categories")
    public Category saveCategory(@RequestBody Category category) {
       return categoryRepo.save(category);
    }
    
 
-	@GetMapping("categorys")
-	public List<Category> findByCategoryId() {
+	@GetMapping("categories")
+	public List<Category> findByAllCategories() {
 		// TODO Auto-generated method stub
 		return categoryRepo.findAll();
 	}
 
 	@Override
-	@GetMapping("categorys/categoryId/{categoryId}")
+	@GetMapping("categories/categoryId/{categoryId}")
 	public Category findByCategoryId(@PathVariable Long categoryId) {
 		// TODO Auto-generated method stub
 		return categoryRepo.findByCategoryId(categoryId);
@@ -51,7 +50,7 @@ public class CategoryServiceImpl implements CategoryService {
 	
 	
 	 	@Override
-	   @PutMapping("categorys/categoryId/{categoryId}")
+	   @PutMapping("categories/categoryId/{categoryId}")
 	   public Category updateCategory(@PathVariable Long categoryId, @RequestBody Category category) {
 	      Category categoryUpdated = categoryRepo.findByCategoryId(categoryId);
 
@@ -63,7 +62,7 @@ public class CategoryServiceImpl implements CategoryService {
 	   }
 	 
 	 
-	   @DeleteMapping("categorys/categoryId/{categoryId}")
+	   @DeleteMapping("categories/categoryId/{categoryId}")
 	   public void deleteCategory(@PathVariable Long categoryId) {
 	      categoryRepo.deleteById(categoryId);
 	   }
