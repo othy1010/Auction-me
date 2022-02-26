@@ -9,7 +9,7 @@
     border-radius: 10px;
     border: 1px solid silver;
     padding: 10px;
-    box-shadow: 15px 10px 20px 0px rgb(253, 128, 158);
+    box-shadow: 15px 10px 20px 0 rgb(253, 128, 158);
 }
 
 .center h1{
@@ -19,12 +19,12 @@
     border-bottom: 1px solid #FD809E;
 }
 
-.center form{
+.center Form{
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-form .txt_field{
+Form .txt_field{
     position: relative;
     /*border-bottom: 2px solid silver;*/
     margin: 30px 0;
@@ -33,7 +33,7 @@ form .txt_field{
 .center ::placeholder{
     color: silver;
 }
-.txt_field input{
+.txt_field input[name="field"]{
     width: 100%;
     padding: 0 5px;
     height: 40px;
@@ -53,7 +53,7 @@ form .txt_field{
     text-decoration: underline;
 }
 
-.center input[type="submit"]{
+.center Button[id="submit"]{
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -66,7 +66,7 @@ form .txt_field{
     outline: none;
 
 }
-.center input[type="submit"]:hover{
+.center Button[id="submit"]:hover{
     border-color: #FD809E;
     transition: 0.5s;
 }
@@ -86,4 +86,8 @@ form .txt_field{
     text-decoration: underline;
 }
 
+div#errorsLogin {
+    color: #ba0000;
+    text-align : center;
+}
 
